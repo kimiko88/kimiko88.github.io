@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pagina di supporto per l'app Controlla Ore Lavorate - Traccia facilmente le tue ore di lavoro">
+    <title>Controlla Ore Lavorate - Supporto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --primary-dark: #0051D5;
+            --secondary-color: #5856D6;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --background: #ffffff;
+            --surface: #f5f5f7;
+            --border: #d2d2d7;
+            --success: #34C759;
+            --warning: #FF9500;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #0A84FF;
+                --primary-dark: #409CFF;
+                --secondary-color: #BF5AF2;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --background: #000000;
+                --surface: #1c1c1e;
+                --border: #38383a;
+                --success: #30D158;
+                --warning: #FF9F0A;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0, 122, 255, 0.2);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .language-selector {
+            text-align: center;
+            padding: 30px 0;
+            background: var(--surface);
+        }
+
+        .language-selector button {
+            background: var(--background);
+            border: 2px solid var(--border);
+            padding: 10px 24px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .language-selector button:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .language-selector button.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .content {
+            padding: 60px 0;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--text-primary);
+        }
+
+        p, li {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 50px;
+            border-radius: 18px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+        }
+
+        footer {
+            background: var(--surface);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .privacy-links {
+            margin-top: 20px;
+        }
+
+        .privacy-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+        }
+
+        .privacy-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="app-icon">⏱️</div>
+            <h1>Controlla Ore Lavorate</h1>
+            <p class="subtitle">Traccia le tue ore di lavoro in modo semplice ed efficiente</p>
+        </div>
+    </header>
+
+    <div class="language-selector">
+        <div class="container">
+            <button onclick="switchLanguage('it')" class="lang-btn active" data-lang="it">🇮🇹 Italiano</button>
+            <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button onclick="switchLanguage('ru')" class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+            <button onclick="switchLanguage('zh')" class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Italian Content -->
+            <div class="content-section active" id="content-it">
+                <section id="about">
+                    <h2>Informazioni sull'App</h2>
+                    <p><strong>Controlla Ore Lavorate</strong> è l'app perfetta per tenere traccia delle tue ore di lavoro in modo semplice e veloce. Ideale per liberi professionisti, consulenti e chiunque abbia bisogno di monitorare il proprio tempo lavorativo.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Tracciamento Facile</h3>
+                            <p>Registra le tue ore di lavoro con pochi tap. Aggiungi note e dettagli per ogni giornata lavorativa.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3>Report Dettagliati</h3>
+                            <p>Genera report PDF completi delle tue ore lavorate, perfetti per clienti e amministrazione.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>Widget iOS</h3>
+                            <p>Visualizza le tue statistiche direttamente dalla schermata home con i widget nativi.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Multilingua</h3>
+                            <p>Disponibile in italiano, inglese, russo e cinese per soddisfare le tue esigenze.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h3>Dati Offline</h3>
+                            <p>Tutti i tuoi dati sono salvati localmente sul tuo dispositivo. Nessun abbonamento richiesto.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Import/Export</h3>
+                            <p>Importa ed esporta facilmente i tuoi dati in formato CSV per backup e analisi.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="how-to-use">
+                    <h2>Come Utilizzare l'App</h2>
+                    
+                    <h3>1. Aggiungere Ore di Lavoro</h3>
+                    <p>Tocca il pulsante "+" per aggiungere una nuova giornata lavorativa. Inserisci le ore lavorate, eventuali pause e note aggiuntive.</p>
+                    
+                    <h3>2. Visualizzare le Statistiche</h3>
+                    <p>Dalla schermata principale puoi vedere un riepilogo delle ore totali lavorate nel periodo selezionato.</p>
+                    
+                    <h3>3. Generare Report</h3>
+                    <p>Vai alla sezione Report e seleziona il periodo desiderato. L'app genererà automaticamente un PDF con tutti i dettagli.</p>
+                    
+                    <h3>4. Personalizzare i Widget</h3>
+                    <p>Premi a lungo sulla schermata home, tocca "+" in alto a sinistra e cerca "Controlla Ore Lavorate" per aggiungere il widget.</p>
+                    
+                    <h3>5. Import/Export Dati</h3>
+                    <p>Nelle impostazioni puoi importare dati dalla versione web precedente o esportare i tuoi dati in formato CSV.</p>
+                </section>
+
+                <section id="faq">
+                    <h2>Domande Frequenti (FAQ)</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">L'app è gratuita?</div>
+                        <div class="faq-answer">Sì, l'app è completamente gratuita senza abbonamenti o acquisti in-app. Tutte le funzionalità sono disponibili gratuitamente.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">I miei dati sono al sicuro?</div>
+                        <div class="faq-answer">Assolutamente sì. Tutti i dati sono salvati localmente sul tuo dispositivo. L'app non invia alcuna informazione a server esterni.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Posso recuperare i dati dalla versione web?</div>
+                        <div class="faq-answer">Sì! L'app include una funzionalità di importazione che ti permette di recuperare i dati dalla precedente versione PWA tramite WebView.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Posso usare l'app offline?</div>
+                        <div class="faq-answer">Certamente. L'app funziona completamente offline, non è richiesta una connessione internet.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Come posso fare un backup dei miei dati?</div>
+                        <div class="faq-answer">Usa la funzione di esportazione CSV nelle impostazioni. Puoi salvare il file esportato su iCloud Drive o inviartelo via email.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">L'app supporta più dispositivi?</div>
+                        <div class="faq-answer">I dati sono salvati localmente su ogni dispositivo. Puoi usare la funzione export/import per sincronizzare i dati tra dispositivi diversi.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Come posso modificare o eliminare un record?</div>
+                        <div class="faq-answer">Tocca su un record esistente per modificarlo. Per eliminarlo, scorri verso sinistra e tocca l'icona del cestino.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Quale versione di iOS è richiesta?</div>
+                        <div class="faq-answer">L'app richiede iOS 15.0 o versioni successive per funzionare correttamente.</div>
+                    </div>
+                </section>
+
+                <section id="troubleshooting">
+                    <h2>Risoluzione Problemi</h2>
+                    
+                    <h3>⚠️ L'app si blocca all'avvio</h3>
+                    <p>Prova a riavviare il dispositivo. Se il problema persiste, elimina e reinstalla l'app (assicurati di esportare i dati prima!).</p>
+                    
+                    <h3>⚠️ Il widget non si aggiorna</h3>
+                    <p>I widget iOS si aggiornano automaticamente, ma potrebbero esserci ritardi. Prova a rimuovere e riaggiungere il widget.</p>
+                    
+                    <h3>⚠️ Non riesco a generare il PDF</h3>
+                    <p>Assicurati di aver concesso all'app i permessi necessari per salvare file. Verifica nelle Impostazioni iOS > Privacy.</p>
+                    
+                    <h3>⚠️ I dati non vengono salvati</h3>
+                    <p>Verifica di avere spazio disponibile sul dispositivo. Controlla anche che iOS non abbia limitato i permessi di archiviazione dell'app.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Hai Bisogno di Aiuto?</h3>
+                    <p>Se hai domande o problemi non elencati qui, non esitare a contattarci!</p>
+                    <a href="mailto:support@controllaorelavorate.app" class="btn">Contattaci via Email</a>
+                </div>
+
+                <section id="privacy">
+                    <h2>Privacy e Sicurezza</h2>
+                    <p>La tua privacy è la nostra priorità:</p>
+                    <ul>
+                        <li>Nessun dato viene inviato a server esterni</li>
+                        <li>Non raccogliamo informazioni personali</li>
+                        <li>Non utilizziamo tracker o analytics di terze parti</li>
+                        <li>I tuoi dati rimangono sempre sul tuo dispositivo</li>
+                        <li>L'app può essere usata completamente offline</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- English Content -->
+            <div class="content-section" id="content-en">
+                <section id="about-en">
+                    <h2>About the App</h2>
+                    <p><strong>Controlla Ore Lavorate</strong> (Work Hours Tracker) is the perfect app to keep track of your working hours in a simple and fast way. Ideal for freelancers, consultants, and anyone who needs to monitor their working time.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Easy Tracking</h3>
+                            <p>Record your working hours with just a few taps. Add notes and details for each workday.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3>Detailed Reports</h3>
+                            <p>Generate comprehensive PDF reports of your worked hours, perfect for clients and administration.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>iOS Widget</h3>
+                            <p>View your statistics directly from the home screen with native widgets.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Multilingual</h3>
+                            <p>Available in Italian, English, Russian, and Chinese to meet your needs.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h3>Offline Data</h3>
+                            <p>All your data is saved locally on your device. No subscription required.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Import/Export</h3>
+                            <p>Easily import and export your data in CSV format for backup and analysis.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="how-to-use-en">
+                    <h2>How to Use the App</h2>
+                    
+                    <h3>1. Adding Work Hours</h3>
+                    <p>Tap the "+" button to add a new workday. Enter the hours worked, any breaks, and additional notes.</p>
+                    
+                    <h3>2. Viewing Statistics</h3>
+                    <p>From the main screen, you can see a summary of total hours worked in the selected period.</p>
+                    
+                    <h3>3. Generating Reports</h3>
+                    <p>Go to the Reports section and select the desired period. The app will automatically generate a PDF with all details.</p>
+                    
+                    <h3>4. Customizing Widgets</h3>
+                    <p>Long press on the home screen, tap "+" at the top left, and search for "Controlla Ore Lavorate" to add the widget.</p>
+                    
+                    <h3>5. Import/Export Data</h3>
+                    <p>In settings, you can import data from the previous web version or export your data in CSV format.</p>
+                </section>
+
+                <section id="faq-en">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is the app free?</div>
+                        <div class="faq-answer">Yes, the app is completely free with no subscriptions or in-app purchases. All features are available for free.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Is my data safe?</div>
+                        <div class="faq-answer">Absolutely. All data is saved locally on your device. The app doesn't send any information to external servers.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Can I recover data from the web version?</div>
+                        <div class="faq-answer">Yes! The app includes an import feature that allows you to recover data from the previous PWA version via WebView.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Can I use the app offline?</div>
+                        <div class="faq-answer">Certainly. The app works completely offline, no internet connection required.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How can I backup my data?</div>
+                        <div class="faq-answer">Use the CSV export function in settings. You can save the exported file to iCloud Drive or email it to yourself.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Does the app support multiple devices?</div>
+                        <div class="faq-answer">Data is saved locally on each device. You can use the export/import function to sync data between different devices.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How can I edit or delete a record?</div>
+                        <div class="faq-answer">Tap on an existing record to edit it. To delete it, swipe left and tap the trash icon.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What iOS version is required?</div>
+                        <div class="faq-answer">The app requires iOS 15.0 or later to function properly.</div>
+                    </div>
+                </section>
+
+                <section id="troubleshooting-en">
+                    <h2>Troubleshooting</h2>
+                    
+                    <h3>⚠️ App crashes on startup</h3>
+                    <p>Try restarting your device. If the problem persists, delete and reinstall the app (make sure to export your data first!).</p>
+                    
+                    <h3>⚠️ Widget doesn't update</h3>
+                    <p>iOS widgets update automatically, but there might be delays. Try removing and re-adding the widget.</p>
+                    
+                    <h3>⚠️ Can't generate PDF</h3>
+                    <p>Make sure you've granted the app the necessary permissions to save files. Check in iOS Settings > Privacy.</p>
+                    
+                    <h3>⚠️ Data is not being saved</h3>
+                    <p>Check that you have available space on your device. Also verify that iOS hasn't restricted the app's storage permissions.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Need Help?</h3>
+                    <p>If you have questions or issues not listed here, don't hesitate to contact us!</p>
+                    <a href="mailto:support@controllaorelavorate.app" class="btn">Contact Us via Email</a>
+                </div>
+
+                <section id="privacy-en">
+                    <h2>Privacy and Security</h2>
+                    <p>Your privacy is our priority:</p>
+                    <ul>
+                        <li>No data is sent to external servers</li>
+                        <li>We don't collect personal information</li>
+                        <li>We don't use third-party trackers or analytics</li>
+                        <li>Your data always stays on your device</li>
+                        <li>The app can be used completely offline</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Russian Content -->
+            <div class="content-section" id="content-ru">
+                <section id="about-ru">
+                    <h2>О приложении</h2>
+                    <p><strong>Controlla Ore Lavorate</strong> (Трекер рабочих часов) - это идеальное приложение для отслеживания ваших рабочих часов простым и быстрым способом. Идеально подходит для фрилансеров, консультантов и всех, кому нужно контролировать свое рабочее время.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Простое отслеживание</h3>
+                            <p>Записывайте свои рабочие часы всего несколькими нажатиями. Добавляйте заметки и детали для каждого рабочего дня.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3>Подробные отчеты</h3>
+                            <p>Создавайте комплексные PDF-отчеты о ваших отработанных часах, идеальные для клиентов и администрации.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>Виджет iOS</h3>
+                            <p>Просматривайте свою статистику прямо с главного экрана с помощью нативных виджетов.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Многоязычность</h3>
+                            <p>Доступно на итальянском, английском, русском и китайском языках.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h3>Офлайн данные</h3>
+                            <p>Все ваши данные сохраняются локально на вашем устройстве. Подписка не требуется.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Импорт/Экспорт</h3>
+                            <p>Легко импортируйте и экспортируйте данные в формате CSV для резервного копирования и анализа.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="how-to-use-ru">
+                    <h2>Как использовать приложение</h2>
+                    
+                    <h3>1. Добавление рабочих часов</h3>
+                    <p>Нажмите кнопку "+", чтобы добавить новый рабочий день. Введите отработанные часы, перерывы и дополнительные заметки.</p>
+                    
+                    <h3>2. Просмотр статистики</h3>
+                    <p>С главного экрана вы можете видеть сводку общих отработанных часов за выбранный период.</p>
+                    
+                    <h3>3. Создание отчетов</h3>
+                    <p>Перейдите в раздел "Отчеты" и выберите желаемый период. Приложение автоматически создаст PDF со всеми деталями.</p>
+                    
+                    <h3>4. Настройка виджетов</h3>
+                    <p>Долго нажимайте на главный экран, нажмите "+" вверху слева и найдите "Controlla Ore Lavorate", чтобы добавить виджет.</p>
+                    
+                    <h3>5. Импорт/Экспорт данных</h3>
+                    <p>В настройках вы можете импортировать данные из предыдущей веб-версии или экспортировать данные в формате CSV.</p>
+                </section>
+
+                <section id="faq-ru">
+                    <h2>Часто задаваемые вопросы (FAQ)</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Приложение бесплатное?</div>
+                        <div class="faq-answer">Да, приложение полностью бесплатное без подписок или встроенных покупок. Все функции доступны бесплатно.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Мои данные в безопасности?</div>
+                        <div class="faq-answer">Абсолютно. Все данные сохраняются локально на вашем устройстве. Приложение не отправляет никакую информацию на внешние серверы.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Могу ли я восстановить данные из веб-версии?</div>
+                        <div class="faq-answer">Да! Приложение включает функцию импорта, которая позволяет восстановить данные из предыдущей PWA версии через WebView.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Могу ли я использовать приложение офлайн?</div>
+                        <div class="faq-answer">Конечно. Приложение работает полностью офлайн, подключение к интернету не требуется.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Как сделать резервную копию данных?</div>
+                        <div class="faq-answer">Используйте функцию экспорта CSV в настройках. Вы можете сохранить экспортированный файл в iCloud Drive или отправить его себе по электронной почте.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Поддерживает ли приложение несколько устройств?</div>
+                        <div class="faq-answer">Данные сохраняются локально на каждом устройстве. Вы можете использовать функцию экспорта/импорта для синхронизации данных между разными устройствами.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Как редактировать или удалить запись?</div>
+                        <div class="faq-answer">Нажмите на существующую запись, чтобы отредактировать ее. Чтобы удалить, проведите пальцем влево и нажмите значок корзины.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Какая версия iOS требуется?</div>
+                        <div class="faq-answer">Приложению требуется iOS 15.0 или более поздняя версия для правильной работы.</div>
+                    </div>
+                </section>
+
+                <section id="troubleshooting-ru">
+                    <h2>Устранение неполадок</h2>
+                    
+                    <h3>⚠️ Приложение вылетает при запуске</h3>
+                    <p>Попробуйте перезагрузить устройство. Если проблема сохраняется, удалите и переустановите приложение (обязательно экспортируйте данные сначала!).</p>
+                    
+                    <h3>⚠️ Виджет не обновляется</h3>
+                    <p>Виджеты iOS обновляются автоматически, но могут быть задержки. Попробуйте удалить и снова добавить виджет.</p>
+                    
+                    <h3>⚠️ Не могу создать PDF</h3>
+                    <p>Убедитесь, что вы предоставили приложению необходимые разрешения для сохранения файлов. Проверьте в Настройках iOS > Конфиденциальность.</p>
+                    
+                    <h3>⚠️ Данные не сохраняются</h3>
+                    <p>Проверьте, есть ли на вашем устройстве свободное место. Также убедитесь, что iOS не ограничила разрешения хранилища приложения.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Нужна помощь?</h3>
+                    <p>Если у вас есть вопросы или проблемы, не перечисленные здесь, не стесняйтесь связаться с нами!</p>
+                    <a href="mailto:support@controllaorelavorate.app" class="btn">Связаться по Email</a>
+                </div>
+
+                <section id="privacy-ru">
+                    <h2>Конфиденциальность и безопасность</h2>
+                    <p>Ваша конфиденциальность - наш приоритет:</p>
+                    <ul>
+                        <li>Никакие данные не отправляются на внешние серверы</li>
+                        <li>Мы не собираем личную информацию</li>
+                        <li>Мы не используем сторонние трекеры или аналитику</li>
+                        <li>Ваши данные всегда остаются на вашем устройстве</li>
+                        <li>Приложение может использоваться полностью офлайн</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Chinese Content -->
+            <div class="content-section" id="content-zh">
+                <section id="about-zh">
+                    <h2>关于应用</h2>
+                    <p><strong>Controlla Ore Lavorate</strong>（工作时间追踪器）是一款完美的应用程序，可以简单快速地追踪您的工作时间。非常适合自由职业者、顾问以及任何需要监控工作时间的人。</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>简易追踪</h3>
+                            <p>只需轻点几下即可记录工作时间。为每个工作日添加备注和详细信息。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3>详细报告</h3>
+                            <p>生成详细的PDF工作时间报告，非常适合客户和管理。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3>iOS小部件</h3>
+                            <p>通过原生小部件直接在主屏幕上查看您的统计数据。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>多语言支持</h3>
+                            <p>提供意大利语、英语、俄语和中文，满足您的需求。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💾</div>
+                            <h3>离线数据</h3>
+                            <p>所有数据都本地保存在您的设备上。无需订阅。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>导入/导出</h3>
+                            <p>轻松以CSV格式导入和导出数据，用于备份和分析。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="how-to-use-zh">
+                    <h2>如何使用应用</h2>
+                    
+                    <h3>1. 添加工作时间</h3>
+                    <p>点击"+"按钮添加新的工作日。输入工作时间、休息时间和额外备注。</p>
+                    
+                    <h3>2. 查看统计</h3>
+                    <p>从主屏幕，您可以看到所选时期的总工作时间摘要。</p>
+                    
+                    <h3>3. 生成报告</h3>
+                    <p>转到报告部分并选择所需时期。应用程序将自动生成包含所有详细信息的PDF。</p>
+                    
+                    <h3>4. 自定义小部件</h3>
+                    <p>长按主屏幕，点击左上角的"+"，搜索"Controlla Ore Lavorate"以添加小部件。</p>
+                    
+                    <h3>5. 导入/导出数据</h3>
+                    <p>在设置中，您可以从以前的网页版本导入数据或以CSV格式导出数据。</p>
+                </section>
+
+                <section id="faq-zh">
+                    <h2>常见问题解答（FAQ）</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">应用是免费的吗？</div>
+                        <div class="faq-answer">是的，应用完全免费，无需订阅或应用内购买。所有功能都免费提供。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">我的数据安全吗？</div>
+                        <div class="faq-answer">绝对安全。所有数据都本地保存在您的设备上。应用不会向外部服务器发送任何信息。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">我可以从网页版本恢复数据吗？</div>
+                        <div class="faq-answer">可以！应用包含导入功能，允许您通过WebView从以前的PWA版本恢复数据。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">我可以离线使用应用吗？</div>
+                        <div class="faq-answer">当然可以。应用完全离线工作，不需要互联网连接。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">如何备份我的数据？</div>
+                        <div class="faq-answer">在设置中使用CSV导出功能。您可以将导出的文件保存到iCloud Drive或通过电子邮件发送给自己。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">应用支持多个设备吗？</div>
+                        <div class="faq-answer">数据本地保存在每个设备上。您可以使用导出/导入功能在不同设备之间同步数据。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">如何编辑或删除记录？</div>
+                        <div class="faq-answer">点击现有记录进行编辑。要删除，向左滑动并点击垃圾桶图标。</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">需要什么iOS版本？</div>
+                        <div class="faq-answer">应用需要iOS 15.0或更高版本才能正常工作。</div>
+                    </div>
+                </section>
+
+                <section id="troubleshooting-zh">
+                    <h2>故障排除</h2>
+                    
+                    <h3>⚠️ 应用启动时崩溃</h3>
+                    <p>尝试重启设备。如果问题仍然存在，删除并重新安装应用（请务必先导出数据！）。</p>
+                    
+                    <h3>⚠️ 小部件不更新</h3>
+                    <p>iOS小部件会自动更新，但可能会有延迟。尝试删除并重新添加小部件。</p>
+                    
+                    <h3>⚠️ 无法生成PDF</h3>
+                    <p>确保您已授予应用保存文件的必要权限。在iOS设置 > 隐私中检查。</p>
+                    
+                    <h3>⚠️ 数据未保存</h3>
+                    <p>检查您的设备是否有可用空间。还要验证iOS是否限制了应用的存储权限。</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>需要帮助？</h3>
+                    <p>如果您有未列出的问题，请随时与我们联系！</p>
+                    <a href="mailto:support@controllaorelavorate.app" class="btn">通过电子邮件联系我们</a>
+                </div>
+
+                <section id="privacy-zh">
+                    <h2>隐私和安全</h2>
+                    <p>您的隐私是我们的首要任务：</p>
+                    <ul>
+                        <li>不向外部服务器发送任何数据</li>
+                        <li>我们不收集个人信息</li>
+                        <li>我们不使用第三方跟踪器或分析工具</li>
+                        <li>您的数据始终保留在您的设备上</li>
+                        <li>应用可以完全离线使用</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Controlla Ore Lavorate. Tutti i diritti riservati.</p>
+            <div class="privacy-links">
+                <a href="mailto:support@controllaorelavorate.app">Contatto</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#about">Informazioni</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected language section
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('[data-lang="' + lang + '"]').classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference or detect browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.substring(0, 2);
+            
+            let defaultLang = 'it';
+            if (savedLang && ['it', 'en', 'ru', 'zh'].includes(savedLang)) {
+                defaultLang = savedLang;
+            } else if (['en', 'ru', 'zh'].includes(browserLang)) {
+                defaultLang = browserLang;
+            }
+            
+            switchLanguage(defaultLang);
+        });
+    </script>
+</body>
+</html>
