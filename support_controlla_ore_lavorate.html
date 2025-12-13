@@ -950,6 +950,26 @@
     </footer>
 
     <script>
+        // App name translations
+        const appNames = {
+            it: {
+                title: "Controlla Ore Lavorate",
+                subtitle: "Traccia le tue ore di lavoro in modo semplice ed efficiente"
+            },
+            en: {
+                title: "Worked Hours",
+                subtitle: "Track your working hours simply and efficiently"
+            },
+            ru: {
+                title: "Трекер Рабочих Часов",
+                subtitle: "Отслеживайте свои рабочие часы просто и эффективно"
+            },
+            zh: {
+                title: "工时记录器",
+                subtitle: "简单高效地记录您的工作时间"
+            }
+        };
+
         function switchLanguage(lang) {
             // Hide all content sections
             document.querySelectorAll('.content-section').forEach(section => {
@@ -964,6 +984,18 @@
                 btn.classList.remove('active');
             });
             document.querySelector('[data-lang="' + lang + '"]').classList.add('active');
+
+            // Update app name and subtitle in header
+            const titleElement = document.getElementById('app-title');
+            const subtitleElement = document.getElementById('app-subtitle');
+
+            if (titleElement && appNames[lang]) {
+                titleElement.textContent = appNames[lang].title;
+            }
+
+            if (subtitleElement && appNames[lang]) {
+                subtitleElement.textContent = appNames[lang].subtitle;
+            }
 
             // Save preference
             localStorage.setItem('preferredLanguage', lang);
