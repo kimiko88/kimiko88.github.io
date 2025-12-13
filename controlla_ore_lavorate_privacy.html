@@ -1,71 +1,920 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy – Controlla Ore Lavorate</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
-      max-width: 700px;
-    }
-    h1, h2 {
-      color: #006400;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Privacy Policy per l'app Controlla Ore Lavorate - La tua privacy è la nostra priorità">
+    <title>Controlla Ore Lavorate - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --primary-dark: #0051D5;
+            --secondary-color: #5856D6;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --background: #ffffff;
+            --surface: #f5f5f7;
+            --border: #d2d2d7;
+            --success: #34C759;
+            --warning: #FF9500;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #0A84FF;
+                --primary-dark: #409CFF;
+                --secondary-color: #BF5AF2;
+                --text-primary: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --background: #000000;
+                --surface: #1c1c1e;
+                --border: #38383a;
+                --success: #30D158;
+                --warning: #FF9F0A;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0, 122, 255, 0.2);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .language-selector {
+            text-align: center;
+            padding: 30px 0;
+            background: var(--surface);
+        }
+
+        .language-selector button {
+            background: var(--background);
+            border: 2px solid var(--border);
+            padding: 10px 24px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .language-selector button:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .language-selector button.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .content {
+            padding: 60px 0;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--text-primary);
+        }
+
+        p,
+        li {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        ul li,
+        ol li {
+            margin-bottom: 12px;
+        }
+
+        .highlight-box {
+            background: var(--surface);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--success);
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--success);
+            margin-top: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .info-card {
+            background: var(--surface);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .info-card h4 {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .update-date {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 40px;
+            border-radius: 18px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: var(--surface);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Privacy Policy</h1>
+    <header>
+        <div class="container">
+            <div class="app-icon">🔒</div>
+            <h1 id="page-title">Privacy Policy</h1>
+            <p class="subtitle" id="page-subtitle">La tua privacy è la nostra priorità</p>
+        </div>
+    </header>
 
-  <p>
-    Questa applicazione ("l'App") raccoglie alcuni dati personali degli utenti tramite l’utilizzo di servizi pubblicitari forniti da terze parti, in particolare Google AdMob.
-  </p>
+    <div class="language-selector">
+        <div class="container">
+            <button onclick="switchLanguage('it')" class="lang-btn active" data-lang="it">🇮🇹 Italiano</button>
+            <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button onclick="switchLanguage('ru')" class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+            <button onclick="switchLanguage('zh')" class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+        </div>
+    </div>
 
-  <h2>Dati raccolti</h2>
-  <p>
-    L'App può raccogliere informazioni tecniche, tra cui:
-  </p>
-  <ul>
-    <li>Identificatori univoci del dispositivo (ad esempio ID pubblicità)</li>
-    <li>Dati di utilizzo (come il tipo di dispositivo, sistema operativo, interazioni con annunci)</li>
-    <li>Dati di geolocalizzazione approssimativa</li>
-  </ul>
+    <div class="content">
+        <div class="container">
+            <!-- Italian Content -->
+            <div class="content-section active" id="content-it">
+                <div class="update-date">
+                    <strong>Ultimo aggiornamento:</strong> 13 Dicembre 2024
+                </div>
 
-  <h2>Finalità del trattamento</h2>
-  <p>
-    I dati raccolti vengono utilizzati esclusivamente per fornire annunci pubblicitari personalizzati o non personalizzati tramite AdMob, migliorare l’esperienza utente e a fini statistici e di sicurezza.
-  </p>
+                <section>
+                    <h2>Informativa sulla Privacy</h2>
+                    <p>Benvenuto nella Privacy Policy di <strong>Controlla Ore Lavorate</strong>. Questa informativa
+                        descrive come gestiamo i tuoi dati quando utilizzi la nostra applicazione mobile.</p>
+                </section>
 
-  <h2>Fornitore del servizio pubblicitario</h2>
-  <p>
-    Il servizio pubblicitario è fornito da:
-  </p>
-  <p>
-    <strong>Google AdMob</strong><br>
-    Per maggiori informazioni sull’uso dei dati da parte di Google:  
-    <a href="https://policies.google.com/technologies/ads" target="_blank">
-      https://policies.google.com/technologies/ads
-    </a>
-  </p>
+                <div class="highlight-box">
+                    <h3>✓ In Breve: I Tuoi Dati Sono Tuoi</h3>
+                    <p><strong>Controlla Ore Lavorate</strong> è progettata con la privacy come priorità assoluta. Tutti
+                        i tuoi dati sono salvati esclusivamente sul tuo dispositivo. Non raccogliamo, trasmettiamo, o
+                        condividiamo alcuna informazione personale con server esterni o terze parti.</p>
+                </div>
 
-  <h2>Consenso</h2>
-  <p>
-    In conformità al Regolamento Generale sulla Protezione dei Dati (GDPR) e altre normative, l’app può mostrare un messaggio per la gestione del consenso tramite la piattaforma di gestione dei consensi (User Messaging Platform di Google).
-  </p>
+                <section>
+                    <h2>1. Raccolta Dati</h2>
+                    <h3>Dati che Raccogliamo</h3>
+                    <p>L'applicazione salva localmente sul tuo dispositivo le seguenti informazioni:</p>
+                    <ul>
+                        <li>Ore di lavoro (data, orario inizio, orario fine, pause)</li>
+                        <li>Note e descrizioni che aggiungi manualmente</li>
+                        <li>Categorie di lavoro personalizzate</li>
+                        <li>Template per report PDF</li>
+                        <li>Impostazioni dell'applicazione</li>
+                        <li>Logo aziendale (se caricato)</li>
+                    </ul>
 
-  <h2>Responsabile del trattamento</h2>
-  <p>
-    Per qualsiasi informazione o richiesta, puoi contattare il responsabile del trattamento all’indirizzo email: <br>
-    <strong>chimien@libero.it</strong>
-  </p>
+                    <h3>Dati che NON Raccogliamo</h3>
+                    <p>Non raccogliamo né trasmettiamo:</p>
+                    <ul>
+                        <li>Dati personali identificativi (nome, email, telefono)</li>
+                        <li>Dati di posizione o geolocalizzazione</li>
+                        <li>Informazioni di pagamento</li>
+                        <li>Dati di utilizzo dell'app o analytics</li>
+                        <li>Cookie o identificatori di tracciamento</li>
+                        <li>Contatti o altre informazioni dal tuo dispositivo</li>
+                    </ul>
+                </section>
 
-  <h2>Modifiche alla presente privacy policy</h2>
-  <p>
-    La presente informativa può essere soggetta a modifiche. Ti consigliamo di consultarla periodicamente.
-  </p>
+                <section>
+                    <h2>2. Utilizzo dei Dati</h2>
+                    <p>I dati che inserisci nell'applicazione vengono utilizzati esclusivamente per:</p>
+                    <ul>
+                        <li>Visualizzare le tue ore di lavoro e statistiche</li>
+                        <li>Generare report PDF personalizzati</li>
+                        <li>Calcolare stipendi e compensi</li>
+                        <li>Fornire widget iOS con le tue statistiche</li>
+                        <li>Esportare i tuoi dati in formato CSV quando richiesto</li>
+                    </ul>
+                    <p><strong>Tutti questi processi avvengono completamente offline sul tuo dispositivo.</strong></p>
+                </section>
 
-  <p><em>Ultimo aggiornamento: Luglio 2025</em></p>
+                <section>
+                    <h2>3. Archiviazione e Sicurezza</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Archiviazione Locale</h4>
+                            <p>Tutti i dati sono salvati esclusivamente nella memoria locale del tuo dispositivo iOS
+                                utilizzando le API sicure di Apple (Core Data / UserDefaults).</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Nessun Server</h4>
+                            <p>L'app non si connette a server esterni, database cloud o servizi di terze parti per
+                                salvare o sincronizzare i tuoi dati.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Backup iCloud</h4>
+                            <p>I tuoi dati possono essere inclusi nel backup automatico di iOS su iCloud, gestito
+                                direttamente da Apple secondo la loro privacy policy.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Sicurezza</h4>
+                            <p>I dati beneficiano della crittografia del dispositivo iOS. Se attivi la protezione con
+                                Face ID/Touch ID sul dispositivo, i tuoi dati sono ulteriormente protetti.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. Condivisione dei Dati</h2>
+                    <p><strong>Non condividiamo mai i tuoi dati con terze parti</strong> perché non abbiamo accesso ai
+                        tuoi dati. L'applicazione funziona completamente offline.</p>
+                    <p>Puoi tu decidere di condividere i tuoi dati attraverso:</p>
+                    <ul>
+                        <li><strong>Export CSV:</strong> Esporti manualmente un file CSV che puoi condividere via email
+                            o altro</li>
+                        <li><strong>PDF Report:</strong> Generi e condividi report PDF con clienti o datori di lavoro
+                        </li>
+                        <li><strong>Backup iCloud:</strong> Gestito da Apple secondo la loro privacy policy</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. I Tuoi Diritti</h2>
+                    <p>Hai il controllo completo sui tuoi dati:</p>
+                    <ul>
+                        <li><strong>Accesso:</strong> Puoi accedere a tutti i tuoi dati in qualsiasi momento dall'app
+                        </li>
+                        <li><strong>Modifica:</strong> Puoi modificare o eliminare qualsiasi dato tramite l'interfaccia
+                            dell'app</li>
+                        <li><strong>Esportazione:</strong> Puoi esportare tutti i tuoi dati in formato CSV</li>
+                        <li><strong>Cancellazione:</strong> Puoi eliminare completamente tutti i dati disinstallando
+                            l'applicazione o usando la funzione di reset nelle impostazioni</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Modifiche a questa Privacy Policy</h2>
+                    <p>Potremmo aggiornare questa Privacy Policy occasionalmente. Ti informeremo di eventuali modifiche
+                        significative tramite un aggiornamento dell'app. La data dell'"Ultimo aggiornamento" in cima a
+                        questa pagina indica quando è stata modificata l'ultima volta.</p>
+                </section>
+
+                <section>
+                    <h2>7. Minori</h2>
+                    <p>L'applicazione non è progettata per essere utilizzata da minori di 13 anni. Non raccogliamo
+                        consapevolmente dati da minori.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Domande sulla Privacy?</h3>
+                    <p>Se hai domande o dubbi riguardo questa Privacy Policy, non esitare a contattarci.</p>
+                    <a href="mailto:chimien@libero.it" class="btn">Contattaci</a>
+                </div>
+            </div>
+
+            <!-- English Content -->
+            <div class="content-section" id="content-en">
+                <div class="update-date">
+                    <strong>Last Updated:</strong> December 13, 2024
+                </div>
+
+                <section>
+                    <h2>Privacy Policy</h2>
+                    <p>Welcome to the Privacy Policy of <strong>Worked Hours</strong>. This policy describes how we
+                        handle your data when you use our mobile application.</p>
+                </section>
+
+                <div class="highlight-box">
+                    <h3>✓ In Short: Your Data is Yours</h3>
+                    <p><strong>Worked Hours</strong> is designed with privacy as the top priority. All your data is
+                        saved exclusively on your device. We do not collect, transmit, or share any personal information
+                        with external servers or third parties.</p>
+                </div>
+
+                <section>
+                    <h2>1. Data Collection</h2>
+                    <h3>Data We Collect</h3>
+                    <p>The application saves the following information locally on your device:</p>
+                    <ul>
+                        <li>Work hours (date, start time, end time, breaks)</li>
+                        <li>Notes and descriptions you manually add</li>
+                        <li>Custom work categories</li>
+                        <li>Templates for PDF reports</li>
+                        <li>Application settings</li>
+                        <li>Company logo (if uploaded)</li>
+                    </ul>
+
+                    <h3>Data We DO NOT Collect</h3>
+                    <p>We do not collect or transmit:</p>
+                    <ul>
+                        <li>Personal identifying data (name, email, phone)</li>
+                        <li>Location or geolocation data</li>
+                        <li>Payment information</li>
+                        <li>App usage data or analytics</li>
+                        <li>Cookies or tracking identifiers</li>
+                        <li>Contacts or other information from your device</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2. Data Usage</h2>
+                    <p>The data you enter in the application is used exclusively to:</p>
+                    <ul>
+                        <li>Display your work hours and statistics</li>
+                        <li>Generate personalized PDF reports</li>
+                        <li>Calculate salaries and compensation</li>
+                        <li>Provide iOS widgets with your statistics</li>
+                        <li>Export your data in CSV format when requested</li>
+                    </ul>
+                    <p><strong>All these processes occur completely offline on your device.</strong></p>
+                </section>
+
+                <section>
+                    <h2>3. Storage and Security</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Local Storage</h4>
+                            <p>All data is saved exclusively in your iOS device's local storage using Apple's secure
+                                APIs (Core Data / UserDefaults).</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>No Servers</h4>
+                            <p>The app does not connect to external servers, cloud databases, or third-party services to
+                                save or sync your data.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>iCloud Backup</h4>
+                            <p>Your data may be included in iOS automatic backup to iCloud, managed directly by Apple
+                                according to their privacy policy.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Security</h4>
+                            <p>Data benefits from iOS device encryption. If you enable Face ID/Touch ID protection on
+                                your device, your data is further protected.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. Data Sharing</h2>
+                    <p><strong>We never share your data with third parties</strong> because we don't have access to your
+                        data. The application works completely offline.</p>
+                    <p>You can choose to share your data through:</p>
+                    <ul>
+                        <li><strong>CSV Export:</strong> Manually export a CSV file that you can share via email or
+                            otherwise</li>
+                        <li><strong>PDF Reports:</strong> Generate and share PDF reports with clients or employers</li>
+                        <li><strong>iCloud Backup:</strong> Managed by Apple according to their privacy policy</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. Your Rights</h2>
+                    <p>You have complete control over your data:</p>
+                    <ul>
+                        <li><strong>Access:</strong> You can access all your data at any time from the app</li>
+                        <li><strong>Modification:</strong> You can modify or delete any data through the app interface
+                        </li>
+                        <li><strong>Export:</strong> You can export all your data in CSV format</li>
+                        <li><strong>Deletion:</strong> You can completely delete all data by uninstalling the
+                            application or using the reset function in settings</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Changes to this Privacy Policy</h2>
+                    <p>We may update this Privacy Policy occasionally. We will inform you of any significant changes
+                        through an app update. The "Last Updated" date at the top of this page indicates when it was
+                        last modified.</p>
+                </section>
+
+                <section>
+                    <h2>7. Children</h2>
+                    <p>The application is not designed for use by children under 13. We do not knowingly collect data
+                        from minors.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Questions About Privacy?</h3>
+                    <p>If you have questions or concerns about this Privacy Policy, please don't hesitate to contact us.
+                    </p>
+                    <a href="mailto:chimien@libero.it" class="btn">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Russian Content -->
+            <div class="content-section" id="content-ru">
+                <div class="update-date">
+                    <strong>Последнее обновление:</strong> 13 декабря 2024
+                </div>
+
+                <section>
+                    <h2>Политика конфиденциальности</h2>
+                    <p>Добро пожаловать в Политику конфиденциальности <strong>Трекер Рабочих Часов</strong>. Эта
+                        политика описывает, как мы обрабатываем ваши данные при использовании нашего мобильного
+                        приложения.</p>
+                </section>
+
+                <div class="highlight-box">
+                    <h3>✓ Кратко: Ваши Данные Принадлежат Вам</h3>
+                    <p><strong>Трекер Рабочих Часов</strong> разработан с приоритетом конфиденциальности. Все ваши
+                        данные сохраняются исключительно на вашем устройстве. Мы не собираем, не передаём и не делимся
+                        никакой личной информацией с внешними серверами или третьими сторонами.</p>
+                </div>
+
+                <section>
+                    <h2>1. Сбор данных</h2>
+                    <h3>Данные, которые мы собираем</h3>
+                    <p>Приложение сохраняет на вашем устройстве следующую информацию:</p>
+                    <ul>
+                        <li>Рабочие часы (дата, время начала, время окончания, перерывы)</li>
+                        <li>Заметки и описания, которые вы добавляете вручную</li>
+                        <li>Пользовательские категории работ</li>
+                        <li>Шаблоны для PDF-отчётов</li>
+                        <li>Настройки приложения</li>
+                        <li>Логотип компании (если загружен)</li>
+                    </ul>
+
+                    <h3>Данные, которые мы НЕ собираем</h3>
+                    <p>Мы не собираем и не передаём:</p>
+                    <ul>
+                        <li>Личные идентифицирующие данные (имя, email, телефон)</li>
+                        <li>Данные о местоположении или геолокации</li>
+                        <li>Платёжную информацию</li>
+                        <li>Данные об использовании приложения или аналитику</li>
+                        <li>Cookies или идентификаторы отслеживания</li>
+                        <li>Контакты или другую информацию с вашего устройства</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2. Использование данных</h2>
+                    <p>Данные, которые вы вводите в приложение, используются исключительно для:</p>
+                    <ul>
+                        <li>Отображения ваших рабочих часов и статистики</li>
+                        <li>Генерации персонализированных PDF-отчётов</li>
+                        <li>Расчёта зарплаты и компенсаций</li>
+                        <li>Предоставления виджетов iOS с вашей статистикой</li>
+                        <li>Экспорта ваших данных в формате CSV по запросу</li>
+                    </ul>
+                    <p><strong>Все эти процессы происходят полностью офлайн на вашем устройстве.</strong></p>
+                </section>
+
+                <section>
+                    <h2>3. Хранение и безопасность</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Локальное хранение</h4>
+                            <p>Все данные сохраняются исключительно в локальной памяти вашего iOS-устройства с
+                                использованием безопасных API Apple (Core Data / UserDefaults).</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Без серверов</h4>
+                            <p>Приложение не подключается к внешним серверам, облачным базам данных или сторонним
+                                сервисам для сохранения или синхронизации ваших данных.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Резервная копия iCloud</h4>
+                            <p>Ваши данные могут быть включены в автоматическое резервное копирование iOS в iCloud,
+                                управляемое непосредственно Apple согласно их политике конфиденциальности.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Безопасность</h4>
+                            <p>Данные защищены шифрованием устройства iOS. Если вы включите защиту Face ID/Touch ID на
+                                устройстве, ваши данные будут дополнительно защищены.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. Обмен данными</h2>
+                    <p><strong>Мы никогда не делимся вашими данными с третьими сторонами</strong>, потому что у нас нет
+                        доступа к вашим данным. Приложение работает полностью офлайн.</p>
+                    <p>Вы можете выбрать обмен данными через:</p>
+                    <ul>
+                        <li><strong>Экспорт CSV:</strong> Вручную экспортировать CSV-файл, которым можно поделиться по
+                            email или иначе</li>
+                        <li><strong>PDF-отчёты:</strong> Генерировать и делиться PDF-отчётами с клиентами или
+                            работодателями</li>
+                        <li><strong>Резервная копия iCloud:</strong> Управляется Apple согласно их политике
+                            конфиденциальности</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. Ваши права</h2>
+                    <p>У вас есть полный контроль над вашими данными:</p>
+                    <ul>
+                        <li><strong>Доступ:</strong> Вы можете получить доступ ко всем вашим данным в любое время из
+                            приложения</li>
+                        <li><strong>Изменение:</strong> Вы можете изменить или удалить любые данные через интерфейс
+                            приложения</li>
+                        <li><strong>Экспорт:</strong> Вы можете экспортировать все ваши данные в формате CSV</li>
+                        <li><strong>Удаление:</strong> Вы можете полностью удалить все данные, удалив приложение или
+                            используя функцию сброса в настройках</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. Изменения в этой Политике конфиденциальности</h2>
+                    <p>Мы можем периодически обновлять эту Политику конфиденциальности. Мы уведомим вас о любых
+                        значительных изменениях через обновление приложения. Дата "Последнее обновление" вверху этой
+                        страницы указывает, когда она была изменена в последний раз.</p>
+                </section>
+
+                <section>
+                    <h2>7. Дети</h2>
+                    <p>Приложение не предназначено для использования детьми младше 13 лет. Мы не собираем сознательно
+                        данные от несовершеннолетних.</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>Вопросы о конфиденциальности?</h3>
+                    <p>Если у вас есть вопросы или опасения по поводу этой Политики конфиденциальности, пожалуйста,
+                        свяжитесь с нами.</p>
+                    <a href="mailto:chimien@libero.it" class="btn">Связаться с нами</a>
+                </div>
+            </div>
+
+            <!-- Chinese Content -->
+            <div class="content-section" id="content-zh">
+                <div class="update-date">
+                    <strong>最后更新:</strong> 2024年12月13日
+                </div>
+
+                <section>
+                    <h2>隐私政策</h2>
+                    <p>欢迎查看<strong>工时记录器</strong>的隐私政策。本政策描述了当您使用我们的移动应用程序时，我们如何处理您的数据。</p>
+                </section>
+
+                <div class="highlight-box">
+                    <h3>✓ 简而言之：您的数据属于您</h3>
+                    <p><strong>工时记录器</strong>以隐私为首要设计原则。您的所有数据仅保存在您的设备上。我们不收集、传输或与外部服务器或第三方共享任何个人信息。</p>
+                </div>
+
+                <section>
+                    <h2>1. 数据收集</h2>
+                    <h3>我们收集的数据</h3>
+                    <p>应用程序在您的设备上本地保存以下信息：</p>
+                    <ul>
+                        <li>工作时间（日期、开始时间、结束时间、休息）</li>
+                        <li>您手动添加的备注和描述</li>
+                        <li>自定义工作类别</li>
+                        <li>PDF报告模板</li>
+                        <li>应用程序设置</li>
+                        <li>公司标识（如果上传）</li>
+                    </ul>
+
+                    <h3>我们不收集的数据</h3>
+                    <p>我们不收集或传输：</p>
+                    <ul>
+                        <li>个人身份数据（姓名、电子邮件、电话）</li>
+                        <li>位置或地理位置数据</li>
+                        <li>支付信息</li>
+                        <li>应用使用数据或分析</li>
+                        <li>Cookie或跟踪标识符</li>
+                        <li>您设备上的联系人或其他信息</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2. 数据使用</h2>
+                    <p>您在应用程序中输入的数据仅用于：</p>
+                    <ul>
+                        <li>显示您的工作时间和统计数据</li>
+                        <li>生成个性化PDF报告</li>
+                        <li>计算工资和报酬</li>
+                        <li>提供带有您统计数据的iOS小部件</li>
+                        <li>根据请求以CSV格式导出您的数据</li>
+                    </ul>
+                    <p><strong>所有这些过程都完全离线在您的设备上进行。</strong></p>
+                </section>
+
+                <section>
+                    <h2>3. 存储和安全</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>本地存储</h4>
+                            <p>所有数据仅保存在您iOS设备的本地存储中，使用Apple的安全API（Core Data / UserDefaults）。</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>无服务器</h4>
+                            <p>应用程序不连接到外部服务器、云数据库或第三方服务来保存或同步您的数据。</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>iCloud备份</h4>
+                            <p>您的数据可能包含在iOS自动备份到iCloud中，由Apple根据其隐私政策直接管理。</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>安全</h4>
+                            <p>数据受益于iOS设备加密。如果您在设备上启用Face ID/Touch ID保护，您的数据将得到进一步保护。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. 数据共享</h2>
+                    <p><strong>我们从不与第三方共享您的数据</strong>，因为我们无法访问您的数据。应用程序完全离线工作。</p>
+                    <p>您可以选择通过以下方式共享数据：</p>
+                    <ul>
+                        <li><strong>CSV导出：</strong>手动导出CSV文件，您可以通过电子邮件或其他方式共享</li>
+                        <li><strong>PDF报告：</strong>生成并与客户或雇主共享PDF报告</li>
+                        <li><strong>iCloud备份：</strong>由Apple根据其隐私政策管理</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. 您的权利</h2>
+                    <p>您可以完全控制您的数据：</p>
+                    <ul>
+                        <li><strong>访问：</strong>您可以随时从应用程序访问所有数据</li>
+                        <li><strong>修改：</strong>您可以通过应用程序界面修改或删除任何数据</li>
+                        <li><strong>导出：</strong>您可以以CSV格式导出所有数据</li>
+                        <li><strong>删除：</strong>您可以通过卸载应用程序或使用设置中的重置功能完全删除所有数据</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>6. 本隐私政策的变更</h2>
+                    <p>我们可能会偶尔更新本隐私政策。我们将通过应用程序更新通知您任何重大变更。此页面顶部的"最后更新"日期表示最后一次修改时间。</p>
+                </section>
+
+                <section>
+                    <h2>7. 儿童</h2>
+                    <p>该应用程序不适合13岁以下儿童使用。我们不会有意识地收集未成年人的数据。</p>
+                </section>
+
+                <div class="contact-box">
+                    <h3>有关隐私的问题？</h3>
+                    <p>如果您对本隐私政策有疑问或担忧，请随时与我们联系。</p>
+                    <a href="mailto:chimien@libero.it" class="btn">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Controlla Ore Lavorate. Tutti i diritti riservati.</p>
+            <div class="footer-links">
+                <a href="mailto:chimien@libero.it">Contatto</a>
+                <a href="support.html">Supporto</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translations for page title and subtitle
+        const pageTranslations = {
+            it: {
+                title: "Privacy Policy",
+                subtitle: "La tua privacy è la nostra priorità"
+            },
+            en: {
+                title: "Privacy Policy",
+                subtitle: "Your privacy is our priority"
+            },
+            ru: {
+                title: "Политика конфиденциальности",
+                subtitle: "Ваша конфиденциальность - наш приоритет"
+            },
+            zh: {
+                title: "隐私政策",
+                subtitle: "您的隐私是我们的首要任务"
+            }
+        };
+
+        function switchLanguage(lang) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected language section
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('[data-lang="' + lang + '"]').classList.add('active');
+
+            // Update page title and subtitle
+            const titleElement = document.getElementById('page-title');
+            const subtitleElement = document.getElementById('page-subtitle');
+
+            if (titleElement && pageTranslations[lang]) {
+                titleElement.textContent = pageTranslations[lang].title;
+            }
+
+            if (subtitleElement && pageTranslations[lang]) {
+                subtitleElement.textContent = pageTranslations[lang].subtitle;
+            }
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference or detect browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.substring(0, 2);
+
+            let defaultLang = 'it';
+            if (savedLang && ['it', 'en', 'ru', 'zh'].includes(savedLang)) {
+                defaultLang = savedLang;
+            } else if (['en', 'ru', 'zh'].includes(browserLang)) {
+                defaultLang = browserLang;
+            }
+
+            switchLanguage(defaultLang);
+        });
+    </script>
 </body>
+
 </html>
