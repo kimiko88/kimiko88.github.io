@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Calculator | Privacy Policy</title>
+    <!-- Importazione font moderno da Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #4A00E0;
+            --secondary: #8E2DE2;
+            --text-light: #ffffff;
+            --text-muted: #a0a0b0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #05050a;
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Sfondo animato */
+        .background-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #05050a;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            top: -10%; left: -10%;
+            width: 500px; height: 500px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .blob-2 {
+            bottom: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        /* Layout Principale */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #a0a0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 1rem;
+        }
+
+        /* Glassmorphism content */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .glass-card:nth-child(1) { animation-delay: 0.2s; }
+        .glass-card:nth-child(2) { animation-delay: 0.4s; }
+        .glass-card:nth-child(3) { animation-delay: 0.6s; }
+        .glass-card:nth-child(4) { animation-delay: 0.8s; }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 svg {
+            color: var(--secondary);
+            width: 24px;
+            height: 24px;
+        }
+
+        p, ul {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .last-update {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #d1d1d1;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+
+        /* Keyframes */
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .glass-card { padding: 1.5rem; }
+            .container { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sfondo Animato -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        
+        <header>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Unlimited Calculator</p>
+            <div class="last-update">Last updated: March 2026</div>
+        </header>
+
+        <main>
+            
+            <section class="glass-card">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="2" x2="12" y2="22"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                    Introduction
+                </h2>
+                <p>Welcome to Unlimited Calculator. We are committed to protecting your privacy and ensuring you have a positive experience while using our app. This Privacy Policy explains our practices regarding the collection, use, and disclosure of information.</p>
+                <p><strong>By downloading and using Unlimited Calculator, you agree to the terms of this Privacy Policy.</strong></p>
+            </section>
+
+            <section class="glass-card">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Data Collection and Use
+                </h2>
+                <p><strong>We do not actively collect, store, or transmit your personal data.</strong> Any mathematical calculations you perform, numbers you input, or settings you change remain strictly on your local device.</p>
+                <p>However, to provide our app for free, we use a third-party advertising service (Google AdMob) which may collect specific data to serve relevant advertisements.</p>
+            </section>
+
+            <section class="glass-card">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    Third-Party Services (Google AdMob)
+                </h2>
+                <p>Unlimited Calculator uses Google AdMob to display advertisements. AdMob may automatically collect certain device information to personalize the ads you see or to analyze traffic. The information collected by AdMob may include:</p>
+                <ul>
+                    <li>Device identifiers (such as Apple's Advertising Identifier - IDFA).</li>
+                    <li>IP Addresses.</li>
+                    <li>Usage data, cookies, and other tracking technologies.</li>
+                    <li>General diagnostic data (like crash reports).</li>
+                </ul>
+                <p>If you have given consent to App Tracking Transparency (ATT) on your iOS device, AdMob might use this data to deliver personalized ads. If you denied consent, AdMob will still serve ads, but they will not be personalized based on your activity across other apps or websites.</p>
+                <p>For more details on how Google handles your data, please review the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+            </section>
+
+            <section class="glass-card">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Contact Us
+                </h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us. We usually reply within 24-48 hours depending on the timezone.</p>
+                <p>Email: <a href="mailto:chimien@libero.it?subject=Privacy Policy Query">chimien@libero.it</a></p>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Unlimited Calculator. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
