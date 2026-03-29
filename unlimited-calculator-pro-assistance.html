@@ -3,160 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unlimited Calculator - Support</title>
+    <title>Unlimited Calculator | Support</title>
+    <!-- Importazione font moderno da Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #007AFF;
-            --bg-color: #f5f5f7;
-            --text-color: #1d1d1f;
-            --card-bg: #ffffff;
+            --primary: #4A00E0;
+            --secondary: #8E2DE2;
+            --text-light: #ffffff;
+            --text-muted: #a0a0b0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-color: #0A84FF;
-                --bg-color: #000000;
-                --text-color: #f5f5f7;
-                --card-bg: #1c1c1e;
-            }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #05050a;
+            color: var(--text-light);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
 
+        /* Sfondo animato super accattivante */
+        .background-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #05050a;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            top: -10%; left: -10%;
+            width: 500px; height: 500px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .blob-2 {
+            bottom: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        /* Layout Principale */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Header / Hero Section */
         header {
-            background-color: var(--card-bg);
-            padding: 3rem 1rem;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 35px rgba(142, 45, 226, 0.4);
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #a0a0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
         }
 
         .subtitle {
-            color: #86868b;
             font-size: 1.2rem;
-            margin-top: 0.5rem;
-        }
-
-        main {
-            flex-grow: 1;
-            max-width: 800px;
+            color: var(--text-muted);
+            max-width: 600px;
             margin: 0 auto;
-            padding: 2rem 1rem;
         }
 
-        .section {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
         }
+
+        /* Animazione progressiva per le schede */
+        .glass-card:nth-child(1) { animation-delay: 0.2s; }
+        .glass-card:nth-child(2) { animation-delay: 0.4s; }
 
         h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            border-bottom: 1px solid #e5e5ea;
-            padding-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .faq-item {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .faq-question {
+        h2 svg {
+            color: var(--secondary);
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Interactive FAQ (Accordions) */
+        details {
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        summary {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        summary:hover {
+            color: var(--secondary);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
         }
 
         .faq-answer {
-            color: #86868b;
+            padding-top: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            animation: fadeIn 0.4s ease;
         }
 
-        .contact-btn {
+        /* Buttons & Call to Action */
+        .support-cta {
+            text-align: center;
+        }
+
+        .btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 600;
-            transition: opacity 0.2s;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(74, 0, 224, 0.3);
         }
 
-        .contact-btn:hover {
-            opacity: 0.8;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(142, 45, 226, 0.4);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            color: #86868b;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+
+        /* Keyframes */
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .glass-card { padding: 1.5rem; }
+            .container { padding: 2rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Unlimited Calculator</h1>
-        <div class="subtitle">Support & Frequently Asked Questions</div>
-    </header>
+    <!-- Sfondo Sfumato Animato -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
-    <main>
-        <!-- Contact Section -->
-        <section class="section">
-            <h2>Need Help?</h2>
-            <p>If you are experiencing issues with the app, have a feature request, or just want to report a bug, we are here to help!</p>
-            <p>Our support team typically responds within 24-48 hours.</p>
-            <a href="mailto:chimien@libero.it?subject=Unlimited Calculator Support" class="contact-btn">Contact Support</a>
-        </section>
+    <div class="container">
+        
+        <!-- Intestazione -->
+        <header>
+            <div class="app-icon">♾️</div>
+            <h1>Unlimited Calculator</h1>
+            <p class="subtitle">Official Support & Documentation</p>
+        </header>
 
-        <!-- FAQ Section -->
-        <section class="section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Why is the layout missing some advanced functions?</div>
-                <div class="faq-answer">In our latest update, we streamlined the interface to focus on the most commonly used tools based on user feedback. We removed visual clutter (like the graph and hyperbolic features) to maximize speed and usability for daily calculations.</div>
-            </div>
+        <!-- Sezione FAQ -->
+        <main>
+            <section class="glass-card">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    Frequently Asked Questions
+                </h2>
 
-            <div class="faq-item">
-                <div class="faq-question">How large can the numbers be?</div>
-                <div class="faq-answer">Thanks to our custom computational engine, there is no practical limit to the size of the numbers you can calculate. You will not see the typical "Error" messages associated with standard calculators.</div>
-            </div>
+                <details>
+                    <summary>Are there any limits to the number sizes?</summary>
+                    <div class="faq-answer">
+                        No. Unlimited Calculator bypasses standard iOS mathematical constraints by using a robust, custom-built big integer engine. You can calculate numbers of virtually infinite length without hitting an "Error" ceiling or losing precision to scientific notation.
+                    </div>
+                </details>
 
-            <div class="faq-item">
-                <div class="faq-answer">Are the scientific functions completely accurate?</div>
-                <div class="faq-answer">Yes! We use advanced mathematical Taylor series expansions specifically optimized for iOS. This guarantees extremely high precision for trigonometric functions (Sin, Cos, Tan) and logarithms, even in complex edge cases.</div>
-            </div>
+                <details>
+                    <summary>How accurate are the scientific features?</summary>
+                    <div class="faq-answer">
+                        Extremely accurate. Trigonometric functions (Sin, Cos, Tan) and logarithms (Ln, Log) are calculated using advanced Taylor series algorithms designed specifically for high precision in extreme edge cases.
+                    </div>
+                </details>
 
-            <div class="faq-item">
-                <div class="faq-question">The app crashed or froze. What should I do?</div>
-                <div class="faq-answer">Please ensure you are updated to the latest version via the App Store. If the problem persists, use the "Contact Support" button above and provide details about the calculation you were trying to perform.</div>
-            </div>
-        </section>
-    </main>
+                <details>
+                    <summary>Why is the keyboard missing some advanced functions?</summary>
+                    <div class="faq-answer">
+                        In our recent redesign, we adopted a minimalist philosophy. We hid highly-complex and rarely used mathematical tools (like graphing and hyperbolic sequences) from the main interface to provide a cleaner, faster, and more intuitive workflow for 99% of daily use cases.
+                    </div>
+                </details>
 
-    <footer>
-        &copy; 2026 Unlimited Calculator. All rights reserved.
-    </footer>
+                <details>
+                    <summary>Why did the hourglass animation look weird before the update?</summary>
+                    <div class="faq-answer">
+                        We noticed a tiny visual clipping issue on the top-left edge of the hourglass particle effect. This has been completely resolved in the latest update for a flawless, smooth experience.
+                    </div>
+                </details>
+            </section>
+
+            <!-- Sezione Contatti -->
+            <section class="glass-card support-cta">
+                <h2>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Still need help?
+                </h2>
+                <p class="subtitle" style="margin-top: 10px; margin-bottom: 20px;">
+                    Our engineering team is ready to assist you. Send us an email with a detailed description of your issue or feature request.
+                </p>
+                <a href="mailto:chimien@libero.it?subject=Unlimited Calculator Support Request" class="btn">Contact Support</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Unlimited Calculator. Designed with precision.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
