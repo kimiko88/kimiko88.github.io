@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Calculator - Support</title>
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --bg-color: #f5f5f7;
+            --text-color: #1d1d1f;
+            --card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #0A84FF;
+                --bg-color: #000000;
+                --text-color: #f5f5f7;
+                --card-bg: #1c1c1e;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #86868b;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #e5e5ea;
+            padding-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #86868b;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            margin-top: 1rem;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #86868b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Unlimited Calculator</h1>
+        <div class="subtitle">Support & Frequently Asked Questions</div>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="section">
+            <h2>Need Help?</h2>
+            <p>If you are experiencing issues with the app, have a feature request, or just want to report a bug, we are here to help!</p>
+            <p>Our support team typically responds within 24-48 hours.</p>
+            <a href="mailto:chimien@libero.it?subject=Unlimited Calculator Support" class="contact-btn">Contact Support</a>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why is the layout missing some advanced functions?</div>
+                <div class="faq-answer">In our latest update, we streamlined the interface to focus on the most commonly used tools based on user feedback. We removed visual clutter (like the graph and hyperbolic features) to maximize speed and usability for daily calculations.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How large can the numbers be?</div>
+                <div class="faq-answer">Thanks to our custom computational engine, there is no practical limit to the size of the numbers you can calculate. You will not see the typical "Error" messages associated with standard calculators.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-answer">Are the scientific functions completely accurate?</div>
+                <div class="faq-answer">Yes! We use advanced mathematical Taylor series expansions specifically optimized for iOS. This guarantees extremely high precision for trigonometric functions (Sin, Cos, Tan) and logarithms, even in complex edge cases.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">The app crashed or froze. What should I do?</div>
+                <div class="faq-answer">Please ensure you are updated to the latest version via the App Store. If the problem persists, use the "Contact Support" button above and provide details about the calculation you were trying to perform.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Unlimited Calculator. All rights reserved.
+    </footer>
+
+</body>
+</html>
