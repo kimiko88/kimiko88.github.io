@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpark - Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9b59b6;
+            --secondary: #8e44ad;
+            --accent: #3498db;
+            --bg: #0f0c29;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #9b59b6, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 30px 0 15px;
+            color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-dim);
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: var(--text-dim);
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 30px 20px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MindSpark</div>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('it')">Italiano</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+                <button class="lang-btn" onclick="setLang('ru')">Русский</button>
+            </div>
+        </header>
+
+        <main class="card">
+            <!-- ITALIANO -->
+            <div id="it" class="lang-content active">
+                <h1>Informativa sulla Privacy</h1>
+                <p>La tua privacy è fondamentale per noi. Questa informativa spiega come MindSpark gestisce i tuoi dati.</p>
+                
+                <h2>1. Raccolta dei Dati</h2>
+                <p>MindSpark è progettata per essere un'esperienza privata. Non raccogliamo dati personali identificativi sui nostri server.</p>
+                <ul>
+                    <li><strong>iCloud:</strong> Utilizziamo Apple iCloud per sincronizzare i tuoi progressi (XP, livelli, monete) tra i tuoi dispositivi. Questi dati appartengono al tuo account Apple e non sono accessibili da noi privatamente.</li>
+                    <li><strong>Dati di Gioco:</strong> I risultati delle tue sessioni sono salvati localmente sul dispositivo o sul tuo spazio iCloud personale.</li>
+                </ul>
+
+                <h2>2. Utilizzo delle Informazioni</h2>
+                <p>I dati raccolti vengono utilizzati esclusivamente per:</p>
+                <ul>
+                    <li>Sincronizzare i progressi di gioco.</li>
+                    <li>Fornire statistiche sulle tue prestazioni cognitive.</li>
+                    <li>Migliorare l'esperienza utente all'interno dell'app.</li>
+                </ul>
+
+                <h2>3. Servizi di Terze Parti</h2>
+                <p>L'app potrebbe utilizzare servizi di terze parti per la gestione della pubblicità (versione gratuita) e per l'elaborazione dei pagamenti (App Store). Tali servizi hanno le proprie informative sulla privacy.</p>
+
+                <h2>4. Sicurezza</h2>
+                <p>Adottiamo tutte le misure necessarie per proteggere i tuoi dati memorizzati localmente e tramite iCloud, sfruttando i protocolli di sicurezza avanzati di Apple.</p>
+
+                <h2>5. Contatti</h2>
+                <p>Per qualsiasi domanda riguardante la privacy, puoi contattarci all'indirizzo email dedicato al supporto.</p>
+            </div>
+
+            <!-- ENGLISH -->
+            <div id="en" class="lang-content">
+                <h1>Privacy Policy</h1>
+                <p>Your privacy is paramount to us. This policy explains how MindSpark manages your data.</p>
+                
+                <h2>1. Data Collection</h2>
+                <p>MindSpark is designed as a private experience. We do not collect personally identifiable data on our servers.</p>
+                <ul>
+                    <li><strong>iCloud:</strong> We use Apple iCloud to sync your progress (XP, levels, coins) across your devices. This data belongs to your Apple account and is not privately accessible by us.</li>
+                    <li><strong>Game Data:</strong> Your session results are saved locally on the device or in your personal iCloud space.</li>
+                </ul>
+
+                <h2>2. Use of Information</h2>
+                <p>The collected data is used exclusively to:</p>
+                <ul>
+                    <li>Synchronize game progress.</li>
+                    <li>Provide statistics on your cognitive performance.</li>
+                    <li>Improve the user experience within the app.</li>
+                </ul>
+
+                <h2>3. Third-Party Services</h2>
+                <p>The app may use third-party services for advertising management (free version) and payment processing (App Store). These services have their own privacy policies.</p>
+
+                <h2>4. Security</h2>
+                <p>We take all necessary measures to protect your data stored locally and via iCloud, leveraging Apple's advanced security protocols.</p>
+
+                <h2>5. Contact Us</h2>
+                <p>For any questions regarding privacy, you can contact us via our support email.</p>
+            </div>
+
+            <!-- RUSSIAN -->
+            <div id="ru" class="lang-content">
+                <h1>Политика конфиденциальности</h1>
+                <p>Ваша конфиденциальность имеет для нас первостепенное значение. Эта политика объясняет, как MindSpark управляет вашими данными.</p>
+                
+                <h2>1. Сбор данных</h2>
+                <p>MindSpark разработано как приложение с высоким уровнем приватности. Мы не собираем личную информацию на наших серверах.</p>
+                <ul>
+                    <li><strong>iCloud:</strong> Мы используем Apple iCloud для синхронизации вашего прогресса (XP, уровни, монеты) между вашими устройствами. Эти данные принадлежат вашей учетной записи Apple и недоступны нам лично.</li>
+                    <li><strong>Игровые данные:</strong> Результаты ваших сессий сохраняются локально на устройстве или в вашем личном пространстве iCloud.</li>
+                </ul>
+
+                <h2>2. Использование информации</h2>
+                <p>Собранные данные используются исключительно для:</p>
+                <ul>
+                    <li>Синхронизации игрового прогресса.</li>
+                    <li>Предоставления статистики о ваших когнитивных показателях.</li>
+                    <li>Улучшения пользовательского опыта внутри приложения.</li>
+                </ul>
+
+                <h2>3. Сторонние сервисы</h2>
+                <p>Приложение может использовать сторонние сервисы для управления рекламой (бесплатная версия) и обработки платежей (App Store). У этих сервисов есть свои собственные политики конфиденциальности.</p>
+
+                <h2>4. Безопасность</h2>
+                <p>Мы принимаем все необходимые меры для защиты ваших данных, хранящихся локально и в iCloud, используя передовые протоколы безопасности Apple.</p>
+
+                <h2>5. Контакты</h2>
+                <p>По любым вопросам, касающимся конфиденциальности, вы можете связаться с нами по электронной почте службы поддержки.</p>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 K. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function setLang(langId) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            // Show selected content
+            document.getElementById(langId).classList.add('active');
+            
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.toLowerCase().includes(langId) || 
+                   (langId === 'it' && btn.textContent === 'Italiano') ||
+                   (langId === 'en' && btn.textContent === 'English') ||
+                   (langId === 'ru' && btn.textContent === 'Русский')) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
