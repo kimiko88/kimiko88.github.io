@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSpark - Support & Assistance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9b59b6;
+            --secondary: #8e44ad;
+            --accent: #3498db;
+            --bg: #0f0c29;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #9b59b6, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 30px 20px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MindSpark</div>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('it')">Italiano</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+                <button class="lang-btn" onclick="setLang('ru')">Русский</button>
+            </div>
+        </header>
+
+        <main class="card">
+            <!-- ITALIANO -->
+            <div id="it" class="lang-content active">
+                <h1>Assistenza e Supporto</h1>
+                <p style="text-align: center; margin-bottom: 40px;">Hai bisogno di aiuto con MindSpark? Siamo qui per te!</p>
+                
+                <h2>Domande Frequenti (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Come funziona il programma di 30 giorni?</div>
+                    <div class="faq-answer">Il programma offre ogni giorno 5 sessioni calibrate sulle tue prestazioni passate, coprendo tutte le principali categorie cognitive.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I miei dati sono al sicuro con iCloud?</div>
+                    <div class="faq-answer">Sì, MindSpark utilizza il framework CloudKit di Apple, crittografando i tuoi dati e rendendoli accessibili solo tramite il tuo ID Apple privato.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Come posso sbloccare MindSpark Premium?</div>
+                    <div class="faq-answer">Puoi passare a Premium dalle Impostazioni dell'app. È disponibile un abbonamento annuale o un acquisto una tantum per sempre.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Cosa fare se i suoni o la haptic non funzionano?</div>
+                    <div class="faq-answer">Verifica che l'interruttore del silenzio del tuo dispositivo non sia attivo e che i suoni siano abilitati nel menu Impostazioni di MindSpark.</div>
+                </div>
+
+                <div class="contact-box">
+                    <p>Non hai trovato quello che cercavi?</p>
+                    <p>Inviaci un'email e risponderemo entro 24-48 ore:</p>
+                    <a href="mailto:chimien@libero.it" class="contact-email">chimien@libero.it</a>
+                </div>
+            </div>
+
+            <!-- ENGLISH -->
+            <div id="en" class="lang-content">
+                <h1>Support & Assistance</h1>
+                <p style="text-align: center; margin-bottom: 40px;">Need help with MindSpark? We're here for you!</p>
+                
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does the 30-day program work?</div>
+                    <div class="faq-answer">The program provides 5 daily sessions calibrated to your past performance, covering all major cognitive categories.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are my data safe with iCloud?</div>
+                    <div class="faq-answer">Yes, MindSpark uses Apple's CloudKit framework, encrypting your data and making it accessible only via your private Apple ID.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I unlock MindSpark Premium?</div>
+                    <div class="faq-answer">You can upgrade to Premium from the app's Settings. An annual subscription or a one-time lifetime purchase is available.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What to do if sounds or haptics don't work?</div>
+                    <div class="faq-answer">Check that your device's silent switch is off and that sounds are enabled in the MindSpark Settings menu.</div>
+                </div>
+
+                <div class="contact-box">
+                    <p>Didn't find what you were looking for?</p>
+                    <p>Send us an email and we'll reply within 24-48 hours:</p>
+                    <a href="mailto:chimien@libero.it" class="contact-email">chimien@libero.it</a>
+                </div>
+            </div>
+
+            <!-- RUSSIAN -->
+            <div id="ru" class="lang-content">
+                <h1>Помощь и поддержка</h1>
+                <p style="text-align: center; margin-bottom: 40px;">Нужна помощь с MindSpark? Мы здесь, чтобы помочь!</p>
+                
+                <h2>Часто задаваемые вопросы (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как работает 30-дневная программа?</div>
+                    <div class="faq-answer">Программа предлагает 5 ежедневных сессий, откалиброванных на основе ваших прошлых результатов и охватывающих все основные когнитивные категории.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Безопасны ли мои данные в iCloud?</div>
+                    <div class="faq-answer">Да, MindSpark использует фреймворк Apple CloudKit, шифруя ваши данные и делая их доступными только через ваш личный Apple ID.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Как мне разблокировать MindSpark Premium?</div>
+                    <div class="faq-answer">Вы можете перейти на Premium в настройках приложения. Доступна годовая подписка или разовый пожизненный доступ.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Что делать, если звуки или вибрация не работают?</div>
+                    <div class="faq-answer">Убедитесь, что переключатель бесшумного режима на вашем устройстве выключен, а звуки включены в меню настроек MindSpark.</div>
+                </div>
+
+                <div class="contact-box">
+                    <p>Не нашли то, что искали?</p>
+                    <p>Отправьте нам письмо, и мы ответим в течение 24-48 часов:</p>
+                    <a href="chimien@libero.it" class="contact-email">chimien@libero.it</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 K. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function setLang(langId) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            // Show selected content
+            document.getElementById(langId).classList.add('active');
+            
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.toLowerCase().includes(langId) || 
+                   (langId === 'it' && btn.textContent === 'Italiano') ||
+                   (langId === 'en' && btn.textContent === 'English') ||
+                   (langId === 'ru' && btn.textContent === 'Русский')) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
