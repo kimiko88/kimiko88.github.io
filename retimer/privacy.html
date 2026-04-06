@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retimer - Privacy Policy</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; line-height: 1.6; color: #1d1d1f; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #fff; }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+        h1 { color: #007AFF; font-size: 32px; font-weight: 700; margin-bottom: 30px; }
+        h3 { color: #1d1d1f; font-size: 20px; margin-top: 30px; }
+        p { color: #424245; }
+        .footer { margin-top: 50px; font-size: 13px; color: #86868b; border-top: 1px solid #d1d1d6; padding-top: 20px; }
+        .lang-picker { text-align: right; margin-bottom: 20px; }
+        select { padding: 8px; border-radius: 8px; border: 1px solid #d1d1d6; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="lang-picker">
+        <select id="langSelect" onchange="changeLang(this.value)">
+            <option value="it">Italiano</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="zh">简体中文</option>
+        </select>
+    </div>
+
+    <!-- ITALIANO -->
+    <div id="it" class="lang-section">
+        <h1>Privacy Policy</h1>
+        <h3>1. Sicurezza dei Dati</h3>
+        <p>Retimer non raccoglie dati personali identificativi. I tuoi dati di focus e le tue impostazioni sono salvati localmente sul dispositivo o sul tuo account iCloud personale.</p>
+        <h3>2. Screen Time</h3>
+        <p>L'accesso a Screen Time viene utilizzato solo per bloccare le distrazioni. Non leggiamo le tue attività private o la cronologia browser.</p>
+        <h3>3. Pubblicità</h3>
+        <p>Utilizziamo Google AdMob per mostrare annunci, che agisce in conformità con le tue preferenze sulla privacy di iOS.</p>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="en" class="lang-section">
+        <h1>Privacy Policy</h1>
+        <h3>1. Data Security</h3>
+        <p>Retimer does not collect personally identifiable information. Your focus data and settings are stored locally on your device or in your personal iCloud account.</p>
+        <h3>2. Screen Time</h3>
+        <p>Screen Time access is only used to block distractions. We do not read your private activities or browsing history.</p>
+        <h3>3. Advertising</h3>
+        <p>We use Google AdMob to display ads, which operates in accordance with your iOS privacy preferences.</p>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="ru" class="lang-section">
+        <h1>Политика конфиденциальности</h1>
+        <h3>1. Безопасность данных</h3>
+        <p>Retimer не собирает личную информацию. Ваши данные фокуса и настройки сохраняются локально на устройстве или в вашем личном аккаунте iCloud.</p>
+        <h3>2. Экранное время</h3>
+        <p>Доступ к Screen Time используется только для блокировки отвлекающих факторов. Мы не читаем ваши действия или историю поиска.</p>
+        <h3>3. Реклама</h3>
+        <p>Мы используем Google AdMob для показа рекламы, которая работает в соответствии с вашими настройками конфиденциальности iOS.</p>
+    </div>
+
+    <!-- CHINESE -->
+    <div id="zh" class="lang-section">
+        <h1>隐私政策</h1>
+        <h3>1. 数据安全</h3>
+        <p>Retimer 不收集个人身份信息。您的专注数据和设置均保存在本地设备或您的个人 iCloud 账户中。</p>
+        <h3>2. 屏幕使用时间</h3>
+        <p>访问屏幕使用时间仅用于屏蔽干扰。我们不会读取您的私人活动或浏览历史。</p>
+        <h3>3. 广告</h3>
+        <p>我们使用 Google AdMob 显示广告，其运行符合您的 iOS 隐私设置偏好。</p>
+    </div>
+
+    <div class="footer">Last Update: April 6, 2026</div>
+
+    <script>
+        function changeLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(lang).classList.add('active');
+        }
+        const userLang = navigator.language.substring(0, 2);
+        const supported = ['it', 'en', 'ru', 'zh'];
+        const defaultLang = supported.includes(userLang) ? userLang : 'en';
+        document.getElementById('langSelect').value = defaultLang;
+        changeLang(defaultLang);
+    </script>
+</body>
+</html>
