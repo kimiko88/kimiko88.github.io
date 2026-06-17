@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistenza - Definitive QR Code</title>
+    <meta name="description" content="Supporto e Assistenza per l'applicazione iOS Definitive QR Code. Leggi le FAQ o contatta l'assistenza clienti.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --border-color: #334155;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            background: linear-gradient(135deg, #4f46e5, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-color);
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 3rem 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: auto;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 1.5rem 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="support-it.html" class="logo">Definitive QR Code</a>
+            <nav class="nav-links">
+                <a href="privacy-it.html">Privacy</a>
+                <a href="support-it.html" class="active">Assistenza</a>
+                <a href="support-en.html">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>Assistenza Clienti</h1>
+            <p>Come possiamo aiutarti? Leggi le risposte alle domande frequenti qui sotto oppure contattaci direttamente compilando il modulo o scrivendoci all'indirizzo email fornito.</p>
+            
+            <form action="mailto:support@fabriziochimienti.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Indirizzo Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Oggetto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit">Invia Messaggio</button>
+            </form>
+
+            <div class="contact-info">
+                <p>Email di Supporto Diretta: support@fabriziochimienti.com</p>
+                <p>Tempo di Risposta: Di solito rispondiamo entro 24-48 ore.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Domande Frequenti (FAQ)</h2>
+            
+            <div class="faq-item">
+                <h3>Come posso scansionare un codice QR?</h3>
+                <p>Apri la scheda Scansiona all'interno dell'app, quindi punta la fotocamera del tuo dispositivo verso il codice QR. L'app rileverà, decodificherà e mostrerà automaticamente il risultato. Assicurati che ci sia luce a sufficienza e tieni fermo il dispositivo.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Come posso concedere il permesso della fotocamera?</h3>
+                <p>Se hai rifiutato per errore l'accesso alla fotocamera, puoi abilitarlo andando nelle Impostazioni del tuo dispositivo iOS, scorrendo verso il basso fino a trovare "Definitive QR Code" nell'elenco delle applicazioni e attivando il selettore relativo alla fotocamera.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Dove viene memorizzata la cronologia delle scansioni?</h3>
+                <p>Tutte le scansioni e i codici QR generati vengono salvati localmente sul tuo dispositivo. Non vengono mai caricati su server remoti, garantendo la tua totale privacy. Puoi gestire o cancellare la cronologia direttamente dalla scheda Cronologia dell'applicazione.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Come posso personalizzare i codici QR che creo?</h3>
+                <p>Vai alla scheda Genera, seleziona il tipo di codice QR (ad esempio WiFi, testo, URL), compila i campi richiesti e personalizza il layout. Puoi scegliere colori personalizzati, applicare gradienti o caricare un logo dalla tua libreria foto per mostrarlo al centro del codice QR.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Come posso aggiungere un widget alla mia schermata Home?</h3>
+                <p>Vai sulla schermata Home del tuo dispositivo iOS, premi a lungo su un'area vuota finché le app non iniziano a vibrare, tocca il pulsante Aggiungi (+) in alto a sinistra, cerca "Definitive QR Code", seleziona la dimensione del widget preferita e tocca Aggiungi Widget.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fabrizio Chimienti. Tutti i diritti riservati.</p>
+        <p>
+            <a href="privacy-en.html">Privacy Policy (EN)</a> | 
+            <a href="privacy-it.html">Informativa sulla Privacy (IT)</a> | 
+            <a href="support-en.html">Support (EN)</a> | 
+            <a href="support-it.html">Assistenza (IT)</a>
+        </p>
+    </footer>
+</body>
+</html>

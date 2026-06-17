@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativa sulla Privacy - Definitive QR Code</title>
+    <meta name="description" content="Informativa sulla Privacy per l'applicazione iOS Definitive QR Code. Scopri come gestiamo i permessi e i dati personali.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --text-muted: #4b5563;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-color: #f8fafc;
+                --text-muted: #94a3b8;
+                --border-color: #334155;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            background: linear-gradient(135deg, #4f46e5, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-color);
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 3rem 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: auto;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            main {
+                padding: 1.5rem 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="privacy-it.html" class="logo">Definitive QR Code</a>
+            <nav class="nav-links">
+                <a href="privacy-it.html" class="active">Privacy</a>
+                <a href="support-it.html">Assistenza</a>
+                <a href="privacy-en.html">EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>Informativa sulla Privacy</h1>
+            <p>Ultimo aggiornamento: 17 Giugno 2026</p>
+            
+            <p>Questa Informativa sulla Privacy descrive come Definitive QR Code (denominata "l'Applicazione") gestisce i tuoi dati personali. L'Applicazione è sviluppata da Fabrizio Chimienti come applicazione gratuita supportata da annunci pubblicitari. Questo servizio è fornito senza costi ed è destinato all'uso così com'è.</p>
+
+            <h2>1. Raccolta e Utilizzo delle Informazioni</h2>
+            <p>L'Applicazione è progettata nel rispetto della tua privacy. Non raccogliamo, memorizziamo o trasmettiamo i tuoi dati personali a server esterni. Tutte le informazioni generate o elaborate dall'Applicazione rimangono strettamente sul tuo dispositivo.</p>
+            
+            <h3>Accesso alla Fotocamera</h3>
+            <p>L'Applicazione richiede l'accesso alla fotocamera del tuo dispositivo per scansionare i codici QR e rilevare testi. Il flusso video della fotocamera viene elaborato interamente in tempo reale sul tuo dispositivo locale. Nessun fotogramma video, fotografia o contenuto scansionato viene caricato o condiviso con noi o con terze parti.</p>
+
+            <h3>Accesso alla Galleria Foto</h3>
+            <p>L'Applicazione richiede l'accesso alla tua galleria fotografica per:</p>
+            <ul>
+                <li>Salvare i codici QR generati direttamente all'interno delle foto del tuo dispositivo.</li>
+                <li>Importare immagini o loghi esistenti da incorporare all'interno dei tuoi codici QR personalizzati.</li>
+            </ul>
+            <p>Questo accesso è gestito esclusivamente a livello locale sul tuo dispositivo. Non trasferiamo né memorizziamo le tue foto su server esterni.</p>
+
+            <h3>Dati di Posizione</h3>
+            <p>Se concedi i permessi di localizzazione, l'Applicazione può associare le coordinate geografiche alla cronologia dei codici QR scansionati, consentendoti di ricordare dove è stato scansionato un codice. Questi dati sulla posizione vengono memorizzati esclusivamente nel database locale sul tuo dispositivo e non vengono mai inviati a noi o a terze parti.</p>
+
+            <h2>2. Archiviazione Locale dei Dati</h2>
+            <p>Tutti i codici QR scansionati, i codici QR generati e le impostazioni dell'applicazione vengono salvati localmente sul dispositivo tramite Core Data e contenitori di archiviazione condivisi (App Groups). Hai il controllo completo su questi dati e puoi eliminare singole voci o svuotare l'intera cronologia in qualsiasi momento dalle impostazioni dell'Applicazione. La disinstallazione dell'Applicazione comporterà anche l'eliminazione definitiva di tutti i dati memorizzati localmente.</p>
+
+            <h2>3. Pubblicità e Servizi di Terze Parti</h2>
+            <p>L'Applicazione integra Google AdMob, un servizio pubblicitario fornito da Google LLC. Per mostrare gli annunci, AdMob potrebbe raccogliere ed elaborare identificatori del dispositivo, dati generali sulla posizione (derivati dagli indirizzi IP) e informazioni diagnostiche. Questi dati vengono utilizzati per mostrare annunci pubblicitari pertinenti, prevenire frodi e generare statistiche aggregate sull'utilizzo dell'app.</p>
+            <p>Con il tuo consenso esplicito fornito tramite la richiesta di tracciamento iOS (App Tracking Transparency - ATT), Google AdMob può tracciare la tua attività tra app e siti web per mostrare annunci personalizzati. Puoi gestire o revocare questo permesso di tracciamento in qualsiasi momento nelle impostazioni del tuo dispositivo iOS alla voce Impostazioni > Privacy > Tracciamento.</p>
+
+            <h2>4. Sicurezza</h2>
+            <p>Apprezziamo la tua fiducia nell'utilizzare la nostra Applicazione e ci impegniamo a proteggerla. Sebbene tutti i dati siano memorizzati localmente, ti consigliamo di proteggere il tuo dispositivo con un codice di accesso, Touch ID o Face ID per impedire l'accesso non autorizzato alle tue informazioni.</p>
+
+            <h2>5. Privacy dei Minori</h2>
+            <p>Poiché l'Applicazione non raccoglie né trasmette dati personali, non raccogliamo né sollecitiamo consapevolmente informazioni personali da minori di 13 anni. I genitori possono essere certi che i dati dei propri figli rimangono privati e limitati al dispositivo in uso.</p>
+
+            <h2>6. Modifiche alla Presente Informativa sulla Privacy</h2>
+            <p>Potremmo aggiornare la nostra Informativa sulla Privacy periodicamente. Ti consigliamo di rivedere questa pagina regolarmente per verificare eventuali modifiche. Gli aggiornamenti verranno pubblicati su questa pagina con la nuova data di modifica.</p>
+
+            <h2>7. Contattaci</h2>
+            <p>Se hai domande o suggerimenti sulla presente Informativa sulla Privacy, puoi contattarci all'indirizzo:</p>
+            <p>Email: support@fabriziochimienti.com</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fabrizio Chimienti. Tutti i diritti riservati.</p>
+        <p>
+            <a href="privacy-en.html">Privacy Policy (EN)</a> | 
+            <a href="privacy-it.html">Informativa sulla Privacy (IT)</a> | 
+            <a href="support-en.html">Support (EN)</a> | 
+            <a href="support-it.html">Assistenza (IT)</a>
+        </p>
+    </footer>
+</body>
+</html>
