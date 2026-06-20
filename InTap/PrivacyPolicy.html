@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - InTap</title>
+    <meta name="description" content="Informativa sulla privacy per i giochi e le applicazioni sviluppate da Fabrizio Chimienti. Scopri come proteggiamo e gestiamo i tuoi dati. / Privacy policy for games and applications developed by Fabrizio Chimienti.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --success: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+                        0 0 80px var(--accent-glow);
+            backdrop-filter: blur(12px);
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            border-radius: 12px;
+            width: fit-content;
+            margin: 0 auto 30px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #fff;
+        }
+
+        /* Language content toggles */
+        .lang-content {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .hidden {
+            display: none !important;
+            opacity: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-update {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+            padding-left: 5px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 24px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .service-title {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-title span {
+            font-size: 0.8rem;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-hover);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        a {
+            color: var(--accent-hover);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-email:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+
+        .editable-field {
+            background: rgba(245, 158, 11, 0.15);
+            border-bottom: 2px dashed #f59e0b;
+            color: #fbbf24;
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Selezione Lingua -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-it" onclick="switchLanguage('it')">Italiano</button>
+            <button class="lang-btn" id="btn-en" onclick="switchLanguage('en')">English</button>
+        </div>
+
+        <!-- ================= ITALIAN CONTENT ================= -->
+        <div id="content-it" class="lang-content">
+            <header>
+                <div class="logo-placeholder">FC</div>
+                <h1>Informativa sulla Privacy</h1>
+                <div class="last-update">Ultimo aggiornamento: 20 Giugno 2026</div>
+            </header>
+
+            <div class="highlight-box">
+                Questa informativa sulla privacy descrive come <span class="editable-field">Fabrizio Chimienti</span> raccoglie, utilizza e protegge le informazioni degli utenti all'interno delle proprie applicazioni mobili, in particolare per il gioco <strong>InTap / MusicGames</strong>.
+            </div>
+
+            <h2>1. Informazioni Generali</h2>
+            <p>
+                Rispettiamo la tua privacy e ci impegniamo a proteggere le informazioni personali che potresti condividere con noi. Questa Privacy Policy descrive le modalità di raccolta, utilizzo e protezione dei dati personali e sensibili forniti o rilevati durante l'utilizzo dei nostri giochi e servizi.
+            </p>
+
+            <h2>2. Raccolta dei Dati e Servizi di Terze Parti</h2>
+            <p>
+                La nostra applicazione non richiede la creazione di un account per giocare e non raccoglie direttamente dati identificativi personali come nome, cognome o indirizzo di casa. Tuttavia, per poter erogare funzionalità fondamentali quali le notifiche e la pubblicità, integriamo servizi di terze parti che potrebbero raccogliere in modo sicuro e anonimizzato alcuni identificativi del dispositivo.
+            </p>
+
+            <div class="service-card">
+                <div class="service-title">Google AdMob <span>Pubblicità</span></div>
+                <p>
+                    Utilizziamo Google AdMob per mostrare annunci pubblicitari all'interno dell'app. AdMob raccoglie e utilizza l'<strong>Advertising ID (ID pubblicitario)</strong> del tuo dispositivo Android al fine di personalizzare gli annunci, prevenire frodi e tracciare le metriche pubblicitarie.
+                </p>
+                <p>
+                    Puoi consultare le norme di Google qui: 
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">OneSignal <span>Notifiche Push</span></div>
+                <p>
+                    Utilizziamo OneSignal per inviare notifiche push (ad esempio notizie su nuovi livelli, sfide musicali o aggiornamenti). OneSignal raccoglie un <strong>token di notifica univoco</strong>, dati sulla lingua del dispositivo, fuso orario ed eventualmente identificativi pubblicitari per inviare notifiche mirate.
+                </p>
+                <p>
+                    Puoi consultare le norme di OneSignal qui: 
+                    <a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener">Privacy Policy di OneSignal</a>.
+                </p>
+            </div>
+
+            <h2>3. Sicurezza e Trattamento dei Dati</h2>
+            <p>
+                La trasmissione e la gestione dei dati sensibili degli utenti avvengono esclusivamente tramite protocolli sicuri crittografati (ad esempio HTTPS) forniti dai SDK ufficiali delle terze parti sopra menzionate. Non vendiamo né condividiamo in alcun modo i dati degli utenti con entità esterne al di fuori dei partner tecnologici elencati.
+            </p>
+
+            <h2>4. Ritenzione e Cancellazione dei Dati</h2>
+            <p>
+                I dati tecnici e pubblicitari gestiti dalle terze parti vengono conservati esclusivamente per il tempo strettamente necessario a erogare il servizio (notifiche o annunci personalizzati).
+            </p>
+            <p>
+                Gli utenti possono limitare la raccolta dei dati per la personalizzazione degli annunci direttamente dalle impostazioni del proprio dispositivo Android (sotto <em>Impostazioni > Privacy > Annunci</em>, disattivando la personalizzazione).
+            </p>
+            <p>
+                Se desideri richiedere la cancellazione di qualsiasi eventuale dato associato al tuo token di notifica o identificativo dispositivo memorizzato da OneSignal, puoi contattarci all'indirizzo email indicato in calce.
+            </p>
+
+            <h2>5. Modifiche alla presente Informativa</h2>
+            <p>
+                Ci riserviamo il diritto di aggiornare periodicamente questa informativa sulla privacy. Ti consigliamo di consultare questa pagina regolarmente per verificare la presenza di eventuali modifiche. Le modifiche diventano efficaci non appena vengono pubblicate su questo indirizzo URL.
+            </p>
+
+            <div class="contact-section">
+                <h2>Punto di Contatto</h2>
+                <p>
+                    Per qualsiasi domanda, richiesta di chiarimento o richiesta di cancellazione dei dati relativi a questa Privacy Policy, puoi contattarci direttamente tramite email:
+                </p>
+                <span class="editable-field" style="font-size: 1.1rem; display: inline-block; margin-bottom: 10px;">chimien@libero.it</span>
+                <br>
+                <a href="mailto:chimien@libero.it" class="btn-email">Invia un'Email</a>
+            </div>
+        </div>
+
+        <!-- ================= ENGLISH CONTENT ================= -->
+        <div id="content-en" class="lang-content hidden">
+            <header>
+                <div class="logo-placeholder">FC</div>
+                <h1>Privacy Policy</h1>
+                <div class="last-update">Last updated: June 20, 2026</div>
+            </header>
+
+            <div class="highlight-box">
+                This privacy policy describes how <span class="editable-field">Fabrizio Chimienti</span> collects, uses, and protects user information within their mobile applications, specifically for the game <strong>InTap / MusicGames</strong>.
+            </div>
+
+            <h2>1. General Information</h2>
+            <p>
+                We respect your privacy and are committed to protecting the personal information you may share with us. This Privacy Policy describes how we collect, use, and protect personal and sensitive data provided or detected during your use of our games and services.
+            </p>
+
+            <h2>2. Data Collection & Third-Party Services</h2>
+            <p>
+                Our application does not require you to create an account to play, and we do not directly collect personal identifying data such as your name, surname, or home address. However, to provide key features such as push notifications and advertising, we integrate third-party services that may securely and anonymously collect certain device identifiers.
+            </p>
+
+            <div class="service-card">
+                <div class="service-title">Google AdMob <span>Advertising</span></div>
+                <p>
+                    We use Google AdMob to display advertisements within the app. AdMob collects and uses your Android device's <strong>Advertising ID</strong> to personalize ads, prevent fraud, and track advertising metrics.
+                </p>
+                <p>
+                    You can view Google's privacy policy here: 
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">OneSignal <span>Push Notifications</span></div>
+                <p>
+                    We use OneSignal to send push notifications (for example, news about new levels, music challenges, or updates). OneSignal collects a <strong>unique notification token</strong>, device language settings, time zone, and potentially advertising identifiers to deliver targeted notifications.
+                </p>
+                <p>
+                    You can view OneSignal's privacy policy here: 
+                    <a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener">OneSignal Privacy Policy</a>.
+                </p>
+            </div>
+
+            <h2>3. Security & Data Processing</h2>
+            <p>
+                Transmission and handling of sensitive user data occur exclusively via secure, encrypted protocols (e.g., HTTPS) provided by the official SDKs of the aforementioned third parties. We do not sell or otherwise share user data with external entities outside the listed technology partners.
+            </p>
+
+            <h2>4. Data Retention & Deletion</h2>
+            <p>
+                Technical and advertising data managed by third parties are retained only for as long as strictly necessary to deliver the service (notifications or personalized ads).
+            </p>
+            <p>
+                Users can limit data collection for ad personalization directly within their Android device settings (under <em>Settings > Privacy > Ads</em>, by disabling personalization).
+            </p>
+            <p>
+                If you wish to request the deletion of any data associated with your notification token or device identifier stored by OneSignal, you can contact us at the email address provided below.
+            </p>
+
+            <h2>5. Changes to This Policy</h2>
+            <p>
+                We reserve the right to update this privacy policy periodically. We advise you to review this page regularly for any changes. Modifications become effective as soon as they are published at this URL.
+            </p>
+
+            <div class="contact-section">
+                <h2>Point of Contact</h2>
+                <p>
+                    For any questions, requests for clarification, or requests for data deletion regarding this Privacy Policy, please contact us directly via email:
+                </p>
+                <span class="editable-field" style="font-size: 1.1rem; display: inline-block; margin-bottom: 10px;">chimien@libero.it</span>
+                <br>
+                <a href="mailto:chimien@libero.it" class="btn-email">Send Email</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Interactive script to switch languages -->
+    <script>
+        function switchLanguage(lang) {
+            const btnIt = document.getElementById('btn-it');
+            const btnEn = document.getElementById('btn-en');
+            const contentIt = document.getElementById('content-it');
+            const contentEn = document.getElementById('content-en');
+
+            if (lang === 'it') {
+                btnIt.classList.add('active');
+                btnEn.classList.remove('active');
+                contentIt.classList.remove('hidden');
+                contentEn.classList.add('hidden');
+                document.documentElement.lang = 'it';
+            } else {
+                btnEn.classList.add('active');
+                btnIt.classList.remove('active');
+                contentEn.classList.remove('hidden');
+                contentIt.classList.add('hidden');
+                document.documentElement.lang = 'en';
+            }
+        }
+
+        // Auto detect browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('it')) {
+                switchLanguage('it');
+            } else {
+                switchLanguage('en');
+            }
+        });
+    </script>
+</body>
+</html>
