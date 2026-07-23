@@ -1,779 +1,735 @@
 <!DOCTYPE html>
 <html lang="it" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabrizio Chimienti — App Portfolio</title>
-    <meta name="description" content="Portfolio ufficiale delle applicazioni mobili di Fabrizio Chimienti: Cardora, InTap, MindSpark, Retimer, FranTilt.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
-    <style>
-/* ===================== DESIGN TOKENS ===================== */
-:root, [data-theme="light"] {
-  --color-bg: #f7f6f2;
-  --color-surface: #f9f8f5;
-  --color-surface-2: #fbfbf9;
-  --color-surface-offset: #f3f0ec;
-  --color-surface-dynamic: #e6e4df;
-  --color-divider: #dcd9d5;
-  --color-border: #d4d1ca;
-  --color-text: #28251d;
-  --color-text-muted: #7a7974;
-  --color-text-faint: #bab9b4;
-  --color-text-inverse: #f9f8f4;
-  --color-primary: #01696f;
-  --color-primary-hover: #0c4e54;
-  --color-primary-highlight: #cedcd8;
-  --color-warning: #964219;
-  --color-success: #437a22;
-  --color-blue: #006494;
-  --color-purple: #7a39bb;
-  --color-gold: #d19900;
-  --color-orange: #da7101;
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-full: 9999px;
-  --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
-  --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
-  --shadow-lg: 0 12px 32px oklch(0.2 0.01 80 / 0.12);
-  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Work Sans', 'Helvetica Neue', sans-serif;
-  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-  --text-hero: clamp(2.5rem,   1rem    + 5vw,    5.5rem);
-  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
-  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
-  --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-  --content-narrow: 640px;
-  --content-default: 960px;
-  --content-wide: 1200px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-[data-theme="dark"] {
-  --color-bg: #171614;
-  --color-surface: #1c1b19;
-  --color-surface-2: #201f1d;
-  --color-surface-offset: #1d1c1a;
-  --color-surface-dynamic: #2d2c2a;
-  --color-divider: #262523;
-  --color-border: #393836;
-  --color-text: #cdccca;
-  --color-text-muted: #797876;
-  --color-text-faint: #5a5957;
-  --color-text-inverse: #2b2a28;
-  --color-primary: #4f98a3;
-  --color-primary-hover: #227f8b;
-  --color-primary-highlight: #313b3b;
-  --color-success: #6daa45;
-  --color-blue: #5591c7;
-  --color-purple: #a86fdf;
-  --color-gold: #e8af34;
-  --color-orange: #fdab43;
-  --color-warning: #bb653b;
-  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
-  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
-}
+  <!-- ═══ SEO PRIMARY ═══ -->
+  <title>Kimiko Apps – App iOS e Android da Fabrizio Zagaglia</title>
+  <meta name="description" content="Scopri le app iOS e Android sviluppate da Fabrizio Zagaglia: Cardora, MindSpark, Retimer, FranTilt, InTap, Definitive QR Code, Controlla Ore Lavorate, Unlimited Calculator Pro e Costituzione Italiana.">
+  <meta name="keywords" content="app iOS, app Android, Cardora, MindSpark, Retimer, FranTilt, InTap, QR Code, Controlla Ore Lavorate, Unlimited Calculator Pro, Costituzione Italiana, Fabrizio Zagaglia, kimiko88">
+  <meta name="author" content="Fabrizio Zagaglia">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kimiko88.github.io/">
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d;
-    --color-surface-offset: #1d1c1a; --color-surface-dynamic: #2d2c2a;
-    --color-divider: #262523; --color-border: #393836;
-    --color-text: #cdccca; --color-text-muted: #797876; --color-text-faint: #5a5957;
-    --color-primary: #4f98a3; --color-primary-hover: #227f8b; --color-primary-highlight: #313b3b;
-    --color-success: #6daa45; --color-blue: #5591c7; --color-purple: #a86fdf;
-    --color-gold: #e8af34; --color-orange: #fdab43; --color-warning: #bb653b;
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kimiko88.github.io/">
+  <meta property="og:title" content="Kimiko Apps – App iOS e Android">
+  <meta property="og:description" content="9 app di qualità per iOS e Android: produttività, giochi, QR code, calcolatrice, ore lavorate e molto altro.">
+  <meta property="og:image" content="https://kimiko88.github.io/og-image.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kimiko Apps – App iOS e Android">
+  <meta name="twitter:description" content="9 app di qualità per iOS e Android da Fabrizio Zagaglia.">
+  <meta name="twitter:image" content="https://kimiko88.github.io/og-image.png">
+
+  <!-- ═══ STRUCTURED DATA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kimiko Apps",
+    "url": "https://kimiko88.github.io/",
+    "description": "App iOS e Android sviluppate da Fabrizio Zagaglia",
+    "author": {
+      "@type": "Person",
+      "name": "Fabrizio Zagaglia",
+      "email": "chimien@libero.it"
+    }
   }
-}
+  </script>
 
-/* ===================== BASE RESET ===================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-font-smoothing: antialiased; }
-body {
-  min-height: 100dvh;
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.6;
-}
-img, picture, svg { display: block; max-width: 100%; }
-ul[role="list"] { list-style: none; }
-button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
-a { color: inherit; text-decoration: none; }
-h1,h2,h3,h4 { text-wrap: balance; line-height: 1.15; }
-p { text-wrap: pretty; max-width: 68ch; }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
 
-/* ===================== LAYOUT ===================== */
-.container { max-width: var(--content-wide); margin-inline: auto; padding-inline: clamp(var(--space-4), 4vw, var(--space-12)); }
-.container--narrow { max-width: var(--content-default); margin-inline: auto; padding-inline: clamp(var(--space-4), 4vw, var(--space-12)); }
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root, [data-theme="light"] {
+      --color-bg:              #f7f6f2;
+      --color-surface:         #f9f8f5;
+      --color-surface-2:       #fbfbf9;
+      --color-surface-offset:  #f3f0ec;
+      --color-divider:         #dcd9d5;
+      --color-border:          #d4d1ca;
+      --color-text:            #28251d;
+      --color-text-muted:      #6a6860;
+      --color-text-faint:      #bab9b4;
+      --color-text-inverse:    #f9f8f4;
+      --color-primary:         #01696f;
+      --color-primary-hover:   #0c4e54;
+      --color-primary-hl:      #cedcd8;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.09);
+      --shadow-lg: 0 12px 32px oklch(0.2 0.01 80 / 0.13);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --text-hero: clamp(2.5rem,   1rem    + 4vw,    4.5rem);
+      --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --content-default: 960px;
+      --content-wide: 1200px;
+    }
+    [data-theme="dark"] {
+      --color-bg:              #171614;
+      --color-surface:         #1c1b19;
+      --color-surface-2:       #201f1d;
+      --color-surface-offset:  #1d1c1a;
+      --color-divider:         #262523;
+      --color-border:          #393836;
+      --color-text:            #cdccca;
+      --color-text-muted:      #979694;
+      --color-text-faint:      #5a5957;
+      --color-text-inverse:    #2b2a28;
+      --color-primary:         #4f98a3;
+      --color-primary-hover:   #227f8b;
+      --color-primary-hl:      #313b3b;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.22);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.32);
+      --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.42);
+    }
 
-/* ===================== NAV ===================== */
-.site-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: oklch(from var(--color-bg) l c h / 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
-}
-.nav-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 4rem; gap: var(--space-8);
-}
-.nav-logo {
-  display: flex; align-items: center; gap: var(--space-2);
-  font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400;
-  color: var(--color-text);
-}
-.nav-logo svg { flex-shrink: 0; }
-.nav-actions { display: flex; align-items: center; gap: var(--space-4); }
-.lang-pills {
-  display: flex; background: var(--color-surface-offset);
-  border: 1px solid var(--color-border); border-radius: var(--radius-full);
-  padding: 3px; gap: 2px;
-}
-.lang-pill {
-  font-size: var(--text-xs); font-weight: 600; padding: 4px 10px;
-  border-radius: var(--radius-full); color: var(--color-text-muted);
-  transition: all var(--transition);
-}
-.lang-pill.active {
-  background: var(--color-bg); color: var(--color-primary);
-  box-shadow: var(--shadow-sm);
-}
-.lang-pill:hover:not(.active) { color: var(--color-text); }
-.theme-toggle {
-  width: 40px; height: 40px; border-radius: var(--radius-full);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--color-text-muted);
-  transition: background var(--transition), color var(--transition);
-}
-.theme-toggle:hover { background: var(--color-surface-offset); color: var(--color-text); }
+    /* ── BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--space-20); -webkit-font-smoothing: antialiased; }
+    body { min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-bg); line-height: 1.6; }
+    img { display:block; max-width:100%; height:auto; }
+    button { cursor:pointer; background:none; border:none; font:inherit; color:inherit; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,h4 { text-wrap: balance; line-height: 1.2; }
+    p { text-wrap: pretty; }
+    ::selection { background: oklch(from var(--color-primary) l c h / 0.22); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 
-/* ===================== HERO ===================== */
-.hero {
-  padding: clamp(var(--space-16), 10vw, var(--space-24)) 0 clamp(var(--space-12), 6vw, var(--space-20));
-  position: relative; overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 80% 60% at 60% 0%, oklch(from var(--color-primary) l c h / 0.07) 0%, transparent 70%);
-}
-.hero-content { position: relative; }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--color-primary);
-  background: var(--color-primary-highlight);
-  padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);
-  margin-bottom: var(--space-6);
-}
-.hero h1 {
-  font-family: var(--font-display); font-size: var(--text-hero);
-  font-weight: 400; color: var(--color-text);
-  margin-bottom: var(--space-6); max-width: 15ch;
-}
-.hero h1 em { font-style: italic; color: var(--color-primary); }
-.hero-sub {
-  font-size: var(--text-lg); color: var(--color-text-muted);
-  margin-bottom: var(--space-10); max-width: 54ch;
-}
-.hero-stats {
-  display: flex; flex-wrap: wrap; gap: var(--space-8);
-}
-.stat { display: flex; flex-direction: column; }
-.stat-number { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text); }
-.stat-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    /* ── SKIP LINK ── */
+    .skip-link { position:absolute; left:-9999px; top:var(--space-4); background:var(--color-primary); color:var(--color-text-inverse); padding:var(--space-2) var(--space-4); border-radius:var(--radius-md); font-size:var(--text-sm); font-weight:600; z-index:200; }
+    .skip-link:focus { left:var(--space-4); }
 
-/* ===================== APPS GRID ===================== */
-.apps-section { padding: clamp(var(--space-12), 8vw, var(--space-24)) 0; }
-.section-header { margin-bottom: var(--space-12); }
-.section-label {
-  font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--color-text-muted);
-  margin-bottom: var(--space-3);
-}
-.section-title {
-  font-family: var(--font-display); font-size: var(--text-2xl);
-  font-weight: 400; color: var(--color-text); max-width: 20ch;
-}
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
-  gap: var(--space-6);
-}
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: oklch(from var(--color-bg) l c h / 0.88);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-divider);
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .header-inner {
+      max-width: var(--content-wide); margin-inline: auto;
+      padding: var(--space-3) var(--space-6);
+      display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    }
+    .logo-mark {
+      display: flex; align-items: center; gap: var(--space-3);
+      font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400;
+      color: var(--color-text);
+      transition: color var(--transition);
+    }
+    .logo-mark:hover { color: var(--color-primary); }
+    .logo-svg { flex-shrink: 0; }
+    .header-controls { display: flex; align-items: center; gap: var(--space-3); }
 
-/* app card */
-.app-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-8);
-  display: flex; flex-direction: column; gap: var(--space-5);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
-  position: relative; overflow: hidden;
-}
-.app-card::before {
-  content: ''; position: absolute; inset: 0; opacity: 0;
-  background: radial-gradient(circle at top left, var(--card-accent-color) 0%, transparent 60%);
-  transition: opacity var(--transition); pointer-events: none;
-}
-.app-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--color-primary-highlight); }
-.app-card:hover::before { opacity: 0.06; }
+    /* Language switcher */
+    .lang-switcher { display: flex; gap: var(--space-1); background: var(--color-surface-offset); border-radius: var(--radius-full); padding: var(--space-1); }
+    .lang-btn {
+      padding: var(--space-1) var(--space-3); border-radius: var(--radius-full);
+      font-size: var(--text-xs); font-weight: 600; letter-spacing: .04em;
+      color: var(--color-text-muted); transition: background var(--transition), color var(--transition);
+    }
+    .lang-btn:hover { color: var(--color-text); }
+    .lang-btn.active { background: var(--color-surface-2); color: var(--color-primary); box-shadow: var(--shadow-sm); }
 
-.app-card-header { display: flex; align-items: flex-start; gap: var(--space-4); }
-.app-icon {
-  width: 60px; height: 60px; border-radius: var(--radius-xl);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.75rem; flex-shrink: 0;
-  box-shadow: 0 4px 12px oklch(0 0 0 / 0.1);
-}
-.app-meta { flex: 1; min-width: 0; }
-.app-name {
-  font-family: var(--font-display); font-size: var(--text-lg);
-  font-weight: 400; color: var(--color-text); margin-bottom: var(--space-1);
-}
-.app-platform-row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
-.app-platform {
-  font-size: var(--text-xs); font-weight: 600;
-  padding: 2px 8px; border-radius: var(--radius-full);
-  background: var(--color-surface-offset); color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
-}
-.app-category {
-  font-size: var(--text-xs); font-weight: 700;
-  padding: 2px 8px; border-radius: var(--radius-full);
-  color: var(--color-text-inverse);
-}
-.app-description {
-  font-size: var(--text-sm); color: var(--color-text-muted);
-  line-height: 1.65; flex: 1;
-}
-.app-features {
-  display: flex; flex-wrap: wrap; gap: var(--space-2);
-  list-style: none;
-}
-.app-features li {
-  font-size: var(--text-xs); font-weight: 500;
-  padding: 3px 10px; border-radius: var(--radius-full);
-  background: var(--color-surface-offset);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
-}
-.app-links {
-  display: flex; gap: var(--space-3); align-items: center;
-  padding-top: var(--space-4); border-top: 1px solid var(--color-divider);
-}
-.app-link-primary {
-  flex: 1; text-align: center;
-  background: var(--color-primary); color: var(--color-text-inverse);
-  font-size: var(--text-sm); font-weight: 600;
-  padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg);
-  transition: background var(--transition), transform var(--transition);
-  display: flex; align-items: center; justify-content: center; gap: var(--space-2);
-}
-.app-link-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
-.app-link-secondary {
-  font-size: var(--text-sm); font-weight: 500; color: var(--color-text-muted);
-  padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  transition: color var(--transition), border-color var(--transition);
-  white-space: nowrap;
-}
-.app-link-secondary:hover { color: var(--color-text); border-color: var(--color-primary); }
+    /* Theme toggle */
+    .theme-toggle {
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-full); color: var(--color-text-muted);
+      transition: background var(--transition), color var(--transition);
+    }
+    .theme-toggle:hover { background: var(--color-surface-offset); color: var(--color-text); }
 
-/* ===================== CONTACT BANNER ===================== */
-.contact-banner {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  padding: clamp(var(--space-10), 5vw, var(--space-16));
-  margin: clamp(var(--space-12), 8vw, var(--space-20)) 0;
-  display: flex; flex-wrap: wrap; align-items: center;
-  gap: var(--space-8); justify-content: space-between;
-  box-shadow: var(--shadow-md);
-  position: relative; overflow: hidden;
-}
-.contact-banner::after {
-  content: ''; position: absolute; right: -4rem; bottom: -4rem;
-  width: 16rem; height: 16rem;
-  background: radial-gradient(circle, oklch(from var(--color-primary) l c h / 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-.contact-text h2 {
-  font-family: var(--font-display); font-size: var(--text-xl);
-  margin-bottom: var(--space-2);
-}
-.contact-text p { color: var(--color-text-muted); font-size: var(--text-base); }
-.contact-btn {
-  background: var(--color-primary); color: var(--color-text-inverse);
-  font-size: var(--text-base); font-weight: 600;
-  padding: var(--space-4) var(--space-8); border-radius: var(--radius-lg);
-  transition: background var(--transition); white-space: nowrap; flex-shrink: 0;
-}
-.contact-btn:hover { background: var(--color-primary-hover); }
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(var(--space-16), 10vw, var(--space-20)) var(--space-6) clamp(var(--space-12), 8vw, var(--space-16));
+      max-width: var(--content-wide); margin-inline: auto;
+      display: grid; grid-template-columns: 1fr; gap: var(--space-8);
+    }
+    .hero-eyebrow {
+      font-size: var(--text-sm); font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--color-primary); margin-bottom: var(--space-3);
+    }
+    .hero-title {
+      font-family: var(--font-display); font-size: var(--text-hero); font-weight: 400;
+      color: var(--color-text); line-height: 1.05;
+    }
+    .hero-title em { font-style: italic; color: var(--color-primary); }
+    .hero-desc {
+      font-size: var(--text-lg); color: var(--color-text-muted);
+      max-width: 56ch; margin-top: var(--space-5);
+    }
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: var(--space-6); margin-top: var(--space-8);
+    }
+    .stat { display: flex; flex-direction: column; gap: var(--space-1); }
+    .stat-num { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text); }
+    .stat-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-muted); }
 
-/* ===================== FOOTER ===================== */
-footer {
-  border-top: 1px solid var(--color-divider);
-  padding: var(--space-8) 0;
-  color: var(--color-text-muted); font-size: var(--text-sm);
-}
-.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    /* ── SECTION ── */
+    .section { padding: clamp(var(--space-8), 6vw, var(--space-16)) var(--space-6); }
+    .section-inner { max-width: var(--content-wide); margin-inline: auto; }
+    .section-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: var(--space-4);
+      margin-bottom: var(--space-10); padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .section-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; }
+    .section-count { font-size: var(--text-sm); color: var(--color-text-muted); }
 
-/* ===================== LANG CONTENT ===================== */
-[data-lang] { display: none; }
-[data-lang].lang-active { display: block; }
-.app-name[data-lang] { display: none; }
-.app-name[data-lang].lang-active { display: block; }
-.app-description[data-lang] { display: none; }
-.app-description[data-lang].lang-active { display: block; }
-[data-lang-inline] span { display: none; }
-[data-lang-inline] span.lang-active { display: inline; }
+    /* ── APP GRID ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+      gap: var(--space-6);
+    }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 768px) {
-  .nav-logo span.full { display: none; }
-  .lang-pill { padding: 4px 8px; }
-  .hero-stats { gap: var(--space-6); }
-  .contact-banner { flex-direction: column; text-align: center; }
-  .contact-btn { width: 100%; text-align: center; }
-  .footer-inner { flex-direction: column; text-align: center; }
-}
-@media (max-width: 480px) {
-  .apps-grid { grid-template-columns: 1fr; }
-  .lang-pill { font-size: 0.65rem; padding: 3px 6px; }
-}
-</style>
+    /* ── APP CARD ── */
+    .app-card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex; flex-direction: column; gap: var(--space-4);
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .app-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: linear-gradient(135deg, oklch(from var(--card-accent, var(--color-primary)) l c h / 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .app-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: oklch(from var(--color-text) l c h / 0.14); }
+
+    .card-top { display: flex; align-items: flex-start; gap: var(--space-4); }
+    .app-icon-wrap {
+      width: 60px; height: 60px; flex-shrink: 0;
+      border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem; box-shadow: var(--shadow-sm);
+    }
+    .card-meta { flex: 1; min-width: 0; }
+    .app-name { font-size: var(--text-base); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-1); }
+    .badges { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+    .badge {
+      font-size: var(--text-xs); font-weight: 600; padding: 2px var(--space-2);
+      border-radius: var(--radius-full); letter-spacing: .04em;
+    }
+    .badge-platform { background: var(--color-surface-offset); color: var(--color-text-muted); }
+    .badge-cat { color: var(--color-text-inverse); }
+
+    .app-desc { font-size: var(--text-sm); color: var(--color-text-muted); flex: 1; line-height: 1.55; }
+
+    .feature-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+    .feat-tag {
+      font-size: var(--text-xs); padding: 2px var(--space-2); border-radius: var(--radius-full);
+      background: oklch(from var(--card-accent, var(--color-primary)) l c h / 0.10);
+      color: var(--card-accent, var(--color-primary));
+      border: 1px solid oklch(from var(--card-accent, var(--color-primary)) l c h / 0.2);
+    }
+
+    .card-links { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: auto; padding-top: var(--space-2); }
+    .card-link {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      font-size: var(--text-xs); font-weight: 600; padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.14);
+      color: var(--color-text-muted);
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .card-link:hover { background: var(--color-surface-offset); color: var(--color-text); }
+    .card-link.primary { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-text-inverse); }
+    .card-link.primary:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+
+    /* ── CONTACT BANNER ── */
+    .contact-banner {
+      margin: var(--space-16) var(--space-6) var(--space-12);
+      max-width: var(--content-default); margin-inline: auto;
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10) var(--space-8);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .contact-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, oklch(from var(--color-primary) l c h / 0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .contact-banner h2 { font-family: var(--font-display); font-size: var(--text-xl); margin-bottom: var(--space-3); }
+    .contact-banner p { color: var(--color-text-muted); max-width: 50ch; margin-inline: auto; margin-bottom: var(--space-6); }
+    .btn-contact {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--color-primary); color: var(--color-text-inverse);
+      padding: var(--space-3) var(--space-8); border-radius: var(--radius-full);
+      font-weight: 600; font-size: var(--text-sm);
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-contact:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-contact:active { transform: translateY(0); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--color-divider);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      color: var(--color-text-faint); font-size: var(--text-xs);
+    }
+    .site-footer a { color: var(--color-text-muted); transition: color var(--transition); }
+    .site-footer a:hover { color: var(--color-primary); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .header-inner { padding: var(--space-3) var(--space-4); }
+      .lang-btn span { display: none; }
+      .hero { padding: var(--space-10) var(--space-4) var(--space-8); }
+      .section { padding: var(--space-8) var(--space-4); }
+      .contact-banner { padding: var(--space-8) var(--space-5); margin: var(--space-8) var(--space-4); }
+    }
+    @media (max-width: 400px) {
+      .lang-switcher { gap: 2px; }
+      .lang-btn { padding: var(--space-1) var(--space-2); }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ========= NAV ========= -->
-<nav class="site-nav" role="navigation">
-  <div class="container nav-inner">
-    <!-- SVG LOGO -->
-    <a href="#" class="nav-logo" aria-label="Home">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
-        <path d="M8 22 L14 10 L20 18 L23 14 L26 18" stroke="var(--color-text-inverse)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="23" cy="14" r="2" fill="var(--color-text-inverse)"/>
+<a href="#main" class="skip-link" data-i18n="skip">Vai al contenuto</a>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo-mark" aria-label="Kimiko Apps – Home">
+      <!-- SVG Logo: stylised "K" mark -->
+      <svg class="logo-svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="9" fill="currentColor" opacity=".10"/>
+        <path d="M9 6v20M9 16l8-10M9 16l9 10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span class="full" style="margin-left:var(--space-2); font-size:var(--text-base);">Fabrizio Chimienti</span>
+      <span>Kimiko Apps</span>
     </a>
-
-    <div class="nav-actions">
-      <!-- Language pills -->
-      <div class="lang-pills" role="group" aria-label="Language">
-        <button class="lang-pill active" data-lang-btn="it" onclick="setLang('it')">IT</button>
-        <button class="lang-pill" data-lang-btn="en" onclick="setLang('en')">EN</button>
-        <button class="lang-pill" data-lang-btn="ru" onclick="setLang('ru')">RU</button>
-        <button class="lang-pill" data-lang-btn="zh" onclick="setLang('zh')">ZH</button>
-      </div>
-      <!-- Theme toggle -->
-      <button class="theme-toggle" data-theme-toggle aria-label="Cambia tema">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <div class="header-controls">
+      <nav class="lang-switcher" role="navigation" aria-label="Seleziona lingua">
+        <button class="lang-btn active" data-lang="it" aria-label="Italiano" onclick="setLang('it')">IT</button>
+        <button class="lang-btn" data-lang="en" aria-label="English" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ru" aria-label="Русский" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" data-lang="zh" aria-label="中文" onclick="setLang('zh')">ZH</button>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Cambia tema" title="Cambia tema">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
       </button>
-    </div>
-  </div>
-</nav>
-
-<!-- ========= HERO ========= -->
-<header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="container hero-content">
-    <div class="hero-eyebrow" data-lang-inline>
-      <span data-lang="it" class="lang-active">App mobili indipendenti</span>
-      <span data-lang="en">Independent mobile apps</span>
-      <span data-lang="ru">Независимые мобильные приложения</span>
-      <span data-lang="zh">独立移动应用</span>
-    </div>
-    <h1>
-      <span data-lang="it" data-lang="it" class="lang-active" style="display:block;">App che <em>fanno</em><br>la differenza</span>
-      <span data-lang="en" style="display:none; font-family:var(--font-display);">Apps that <em>make</em><br>a difference</span>
-      <span data-lang="ru" style="display:none; font-family:var(--font-display);">Приложения,<br><em>меняющие</em> жизнь</span>
-      <span data-lang="zh" style="display:none; font-family:var(--font-display);">改变生活的<br><em>应用程序</em></span>
-    </h1>
-    <p class="hero-sub" id="hero-sub-it" data-lang="it">
-      Cinque applicazioni progettate per semplificare la vita quotidiana: dalla produttività al gioco, dall'allenamento mentale alla gestione delle carte fedeltà.
-    </p>
-    <p class="hero-sub" id="hero-sub-en" data-lang="en" style="display:none;">
-      Five applications designed to simplify everyday life: from productivity to gaming, from mental training to loyalty card management.
-    </p>
-    <p class="hero-sub" id="hero-sub-ru" data-lang="ru" style="display:none;">
-      Пять приложений, созданных для упрощения повседневной жизни: от продуктивности до игр, от умственных тренировок до управления картами лояльности.
-    </p>
-    <p class="hero-sub" id="hero-sub-zh" data-lang="zh" style="display:none;">
-      五款旨在简化日常生活的应用程序：从提高效率到游戏娱乐，从脑力训练到会员卡管理。
-    </p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-number">5</span>
-        <span class="stat-label" data-lang-inline>
-          <span data-lang="it" class="lang-active">Applicazioni</span>
-          <span data-lang="en">Applications</span>
-          <span data-lang="ru">Приложения</span>
-          <span data-lang="zh">应用程序</span>
-        </span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">iOS + Android</span>
-        <span class="stat-label" data-lang-inline>
-          <span data-lang="it" class="lang-active">Piattaforme</span>
-          <span data-lang="en">Platforms</span>
-          <span data-lang="ru">Платформы</span>
-          <span data-lang="zh">平台</span>
-        </span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">4</span>
-        <span class="stat-label" data-lang-inline>
-          <span data-lang="it" class="lang-active">Lingue</span>
-          <span data-lang="en">Languages</span>
-          <span data-lang="ru">Языки</span>
-          <span data-lang="zh">语言</span>
-        </span>
-      </div>
     </div>
   </div>
 </header>
 
-<!-- ========= APPS GRID ========= -->
-<main>
-<section class="apps-section" id="apps">
-  <div class="container">
-    <div class="section-header">
-      <p class="section-label" data-lang-inline>
-        <span data-lang="it" class="lang-active">Le mie applicazioni</span>
-        <span data-lang="en">My applications</span>
-        <span data-lang="ru">Мои приложения</span>
-        <span data-lang="zh">我的应用程序</span>
+<!-- ══════════ HERO ══════════ -->
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Sviluppatore indipendente</p>
+      <h1 class="hero-title" id="hero-title">
+        <span data-i18n="hero_title_1">App pensate</span><br>
+        <em data-i18n="hero_title_2">con cura.</em>
+      </h1>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Produttività, giochi, strumenti e utilità per iOS e Android. Progettate con attenzione per essere semplici, potenti e rispettose della tua privacy.
       </p>
-      <h2 class="section-title" data-lang-inline>
-        <span data-lang="it" class="lang-active">Ogni app, una storia</span>
-        <span data-lang="en">Every app, a story</span>
-        <span data-lang="ru">Каждое приложение — история</span>
-        <span data-lang="zh">每款应用，都有故事</span>
-      </h2>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">9</span>
+          <span class="stat-label" data-i18n="stat_apps">App pubblicate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">iOS &amp; Android</span>
+          <span class="stat-label" data-i18n="stat_platforms">Piattaforme</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4</span>
+          <span class="stat-label" data-i18n="stat_langs">Lingue</span>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="apps-grid">
-
-      <!-- ===== CARDORA ===== -->
-      <article class="app-card" style="--card-accent-color: var(--color-primary);">
-        <div class="app-card-header">
-          <div class="app-icon" style="background: linear-gradient(135deg, #e8f5f0, #b3ddd8);">🃏</div>
-          <div class="app-meta">
-            <div class="app-name">Cardora</div>
-            <div class="app-platform-row">
-              <span class="app-platform">iOS</span>
-              <span class="app-category" style="background: var(--color-primary);" data-lang-inline>
-                <span data-lang="it" class="lang-active">Utilità</span>
-                <span data-lang="en">Utility</span>
-                <span data-lang="ru">Утилита</span>
-                <span data-lang="zh">实用工具</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <p class="app-description" data-lang="it">Portafoglio digitale offline per le tue tessere fedeltà. Scansiona codici da screenshot, organizza per categorie e ricevi notifiche GPS quando sei vicino al negozio. Tutto salvato localmente e su iCloud, senza server esterni.</p>
-        <p class="app-description" data-lang="en" style="display:none;">Offline digital wallet for your loyalty cards. Scan barcodes from screenshots, organize by category, and receive GPS proximity notifications near stores. All data stored locally and on iCloud — no external servers.</p>
-        <p class="app-description" data-lang="ru" style="display:none;">Офлайн-кошелёк для карт лояльности. Сканируйте штрих-коды со скриншотов, организуйте по категориям и получайте GPS-уведомления рядом с магазином. Данные хранятся локально и в iCloud — без сторонних серверов.</p>
-        <p class="app-description" data-lang="zh" style="display:none;">用于会员卡的离线数字钱包。可扫描截图中的条形码，按类别整理，并在靠近商店时收到GPS提醒。所有数据本地存储并同步至iCloud，无外部服务器。</p>
-        <ul class="app-features">
-          <li data-lang-inline><span data-lang="it" class="lang-active">Offline & privato</span><span data-lang="en">Offline & private</span><span data-lang="ru">Офлайн</span><span data-lang="zh">离线私密</span></li>
-          <li>iCloud Sync</li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Notifiche GPS</span><span data-lang="en">GPS alerts</span><span data-lang="ru">GPS-уведомления</span><span data-lang="zh">GPS提醒</span></li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Codici da screenshot</span><span data-lang="en">Scan from screenshots</span><span data-lang="ru">Сканер скриншотов</span><span data-lang="zh">截图扫码</span></li>
-        </ul>
-        <div class="app-links">
-          <a href="./Cardora/index.html" class="app-link-primary" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span data-lang-inline><span data-lang="it" class="lang-active">Supporto</span><span data-lang="en">Support</span><span data-lang="ru">Поддержка</span><span data-lang="zh">支持</span></span>
-          </a>
-        </div>
-      </article>
-
-      <!-- ===== INTAP ===== -->
-      <article class="app-card" style="--card-accent-color: var(--color-blue);">
-        <div class="app-card-header">
-          <div class="app-icon" style="background: linear-gradient(135deg, #e0ecf8, #b3ccee);">🎵</div>
-          <div class="app-meta">
-            <div class="app-name">InTap / MusicGames</div>
-            <div class="app-platform-row">
-              <span class="app-platform">Android</span>
-              <span class="app-category" style="background: var(--color-blue);" data-lang-inline>
-                <span data-lang="it" class="lang-active">Gioco musicale</span>
-                <span data-lang="en">Music game</span>
-                <span data-lang="ru">Музыкальная игра</span>
-                <span data-lang="zh">音乐游戏</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <p class="app-description" data-lang="it">Gioco musicale ritmico per Android. Metti alla prova il tuo senso del ritmo con livelli progressivi, sfide musicali e nuovi contenuti. Supporta notifiche push tramite OneSignal e annunci tramite Google AdMob.</p>
-        <p class="app-description" data-lang="en" style="display:none;">Rhythmic music game for Android. Test your sense of rhythm with progressive levels, musical challenges, and new content. Supports push notifications via OneSignal and ads via Google AdMob.</p>
-        <p class="app-description" data-lang="ru" style="display:none;">Ритмическая музыкальная игра для Android. Проверьте своё чувство ритма с прогрессивными уровнями и музыкальными испытаниями. Поддерживает push-уведомления через OneSignal и рекламу через Google AdMob.</p>
-        <p class="app-description" data-lang="zh" style="display:none;">Android节奏音乐游戏。通过渐进关卡和音乐挑战测试你的节奏感。支持OneSignal推送通知和Google AdMob广告。</p>
-        <ul class="app-features">
-          <li data-lang-inline><span data-lang="it" class="lang-active">Ritmo progressivo</span><span data-lang="en">Progressive rhythm</span><span data-lang="ru">Прогрессия</span><span data-lang="zh">渐进节奏</span></li>
-          <li>OneSignal</li>
-          <li>Google AdMob</li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Livelli musicali</span><span data-lang="en">Music levels</span><span data-lang="ru">Уровни</span><span data-lang="zh">音乐关卡</span></li>
-        </ul>
-        <div class="app-links">
-          <a href="./InTap/PrivacyPolicy.html" class="app-link-primary" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span data-lang-inline><span data-lang="it" class="lang-active">Privacy Policy</span><span data-lang="en">Privacy Policy</span><span data-lang="ru">Политика</span><span data-lang="zh">隐私政策</span></span>
-          </a>
-        </div>
-      </article>
-
-      <!-- ===== MINDSPARK ===== -->
-      <article class="app-card" style="--card-accent-color: var(--color-purple);">
-        <div class="app-card-header">
-          <div class="app-icon" style="background: linear-gradient(135deg, #f0e8fa, #d9c2f0);">🧠</div>
-          <div class="app-meta">
-            <div class="app-name">MindSpark</div>
-            <div class="app-platform-row">
-              <span class="app-platform">iOS</span>
-              <span class="app-category" style="background: var(--color-purple);" data-lang-inline>
-                <span data-lang="it" class="lang-active">Allenamento mentale</span>
-                <span data-lang="en">Brain training</span>
-                <span data-lang="ru">Тренинг мозга</span>
-                <span data-lang="zh">脑力训练</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <p class="app-description" data-lang="it">Programma di 30 giorni per allenare le capacità cognitive. 5 sessioni quotidiane calibrate sulle tue prestazioni, che coprono memoria, attenzione, logica e velocità. Dati sincronizzati con iCloud tramite CloudKit. Disponibile versione Premium.</p>
-        <p class="app-description" data-lang="en" style="display:none;">30-day program to train cognitive abilities. 5 daily sessions calibrated on your performance, covering memory, attention, logic and speed. Data synced with iCloud via CloudKit. Premium version available.</p>
-        <p class="app-description" data-lang="ru" style="display:none;">30-дневная программа для тренировки когнитивных способностей. 5 ежедневных сессий, откалиброванных под ваши результаты: память, внимание, логика и скорость. Данные синхронизируются через CloudKit. Доступна Premium-версия.</p>
-        <p class="app-description" data-lang="zh" style="display:none;">30天认知能力训练计划。每日5次根据表现校准的专项练习，涵盖记忆力、注意力、逻辑和反应速度。通过CloudKit同步至iCloud。提供高级版。</p>
-        <ul class="app-features">
-          <li data-lang-inline><span data-lang="it" class="lang-active">Programma 30 giorni</span><span data-lang="en">30-day program</span><span data-lang="ru">30 дней</span><span data-lang="zh">30天计划</span></li>
-          <li>iCloud CloudKit</li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">5 sessioni al giorno</span><span data-lang="en">5 sessions/day</span><span data-lang="ru">5 сессий/день</span><span data-lang="zh">每日5次</span></li>
-          <li>Premium</li>
-        </ul>
-        <div class="app-links">
-          <a href="./mindspark/support.html" class="app-link-primary" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span data-lang-inline><span data-lang="it" class="lang-active">Supporto</span><span data-lang="en">Support</span><span data-lang="ru">Поддержка</span><span data-lang="zh">支持</span></span>
-          </a>
-          <a href="./mindspark/privacy.html" class="app-link-secondary" target="_blank" rel="noopener noreferrer" data-lang-inline>
-            <span data-lang="it" class="lang-active">Privacy</span><span data-lang="en">Privacy</span><span data-lang="ru">Политика</span><span data-lang="zh">隐私</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- ===== RETIMER ===== -->
-      <article class="app-card" style="--card-accent-color: var(--color-success);">
-        <div class="app-card-header">
-          <div class="app-icon" style="background: linear-gradient(135deg, #e5f5e0, #b8e2a8);">⏱️</div>
-          <div class="app-meta">
-            <div class="app-name">Retimer</div>
-            <div class="app-platform-row">
-              <span class="app-platform">iOS</span>
-              <span class="app-category" style="background: var(--color-success);" data-lang-inline>
-                <span data-lang="it" class="lang-active">Produttività</span>
-                <span data-lang="en">Productivity</span>
-                <span data-lang="ru">Продуктивность</span>
-                <span data-lang="zh">效率工具</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <p class="app-description" data-lang="it">App di produttività e focus con blocco delle distrazioni tramite Screen Time API. Accumula XP completando sessioni di concentrazione, livella il tuo personaggio e costruisci abitudini solide con statistiche dettagliate.</p>
-        <p class="app-description" data-lang="en" style="display:none;">Productivity and focus app with distraction blocking via Screen Time API. Earn XP by completing focus sessions, level up your character, and build solid habits with detailed statistics.</p>
-        <p class="app-description" data-lang="ru" style="display:none;">Приложение для продуктивности и концентрации с блокировкой отвлекающих факторов через Screen Time API. Зарабатывайте XP, прокачивайте персонажа и формируйте привычки с подробной статистикой.</p>
-        <p class="app-description" data-lang="zh" style="display:none;">专注与生产力应用，通过Screen Time API屏蔽干扰。完成专注时段赚取经验值，升级角色，通过详细统计建立良好习惯。</p>
-        <ul class="app-features">
-          <li>Screen Time API</li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Sistema XP</span><span data-lang="en">XP system</span><span data-lang="ru">Система XP</span><span data-lang="zh">经验值系统</span></li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Blocco distrazioni</span><span data-lang="en">Focus lock</span><span data-lang="ru">Блокировка</span><span data-lang="zh">专注锁定</span></li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Statistiche</span><span data-lang="en">Statistics</span><span data-lang="ru">Статистика</span><span data-lang="zh">统计数据</span></li>
-        </ul>
-        <div class="app-links">
-          <a href="./retimer/support.html" class="app-link-primary" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span data-lang-inline><span data-lang="it" class="lang-active">Supporto</span><span data-lang="en">Support</span><span data-lang="ru">Поддержка</span><span data-lang="zh">支持</span></span>
-          </a>
-          <a href="./retimer/privacy.html" class="app-link-secondary" target="_blank" rel="noopener noreferrer" data-lang-inline>
-            <span data-lang="it" class="lang-active">Privacy</span><span data-lang="en">Privacy</span><span data-lang="ru">Политика</span><span data-lang="zh">隐私</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- ===== FRANTILT ===== -->
-      <article class="app-card" style="--card-accent-color: var(--color-orange);">
-        <div class="app-card-header">
-          <div class="app-icon" style="background: linear-gradient(135deg, #f8ede0, #f5d5a8);">🚀</div>
-          <div class="app-meta">
-            <div class="app-name">FranTilt</div>
-            <div class="app-platform-row">
-              <span class="app-platform">iOS</span>
-              <span class="app-category" style="background: var(--color-orange);" data-lang-inline>
-                <span data-lang="it" class="lang-active">Gioco arcade</span>
-                <span data-lang="en">Arcade game</span>
-                <span data-lang="ru">Аркадная игра</span>
-                <span data-lang="zh">街机游戏</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <p class="app-description" data-lang="it">Gioco spaziale arcade con controllo tramite accelerometro (tilt). Pilota la tua astronave inclinando il dispositivo, colleziona gemme, evita ostacoli e scala le classifiche su Game Center. Calibrazione personalizzabile dal menu Setup.</p>
-        <p class="app-description" data-lang="en" style="display:none;">Arcade space game controlled by tilt (accelerometer). Pilot your spaceship by tilting your device, collect gems, avoid obstacles, and climb leaderboards on Game Center. Customizable calibration from the Setup menu.</p>
-        <p class="app-description" data-lang="ru" style="display:none;">Аркадная космическая игра с управлением наклоном (акселерометр). Управляйте кораблём наклоном устройства, собирайте самоцветы, избегайте препятствий и соревнуйтесь в Game Center. Настраиваемая калибровка.</p>
-        <p class="app-description" data-lang="zh" style="display:none;">通过倾斜（加速度计）控制的街机太空游戏。倾斜设备驾驶飞船，收集宝石，躲避障碍，并在Game Center排行榜上竞争。可通过设置菜单自定义校准。</p>
-        <ul class="app-features">
-          <li data-lang-inline><span data-lang="it" class="lang-active">Controllo tilt</span><span data-lang="en">Tilt control</span><span data-lang="ru">Наклон</span><span data-lang="zh">倾斜控制</span></li>
-          <li>Game Center</li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Classifiche</span><span data-lang="en">Leaderboards</span><span data-lang="ru">Рейтинги</span><span data-lang="zh">排行榜</span></li>
-          <li data-lang-inline><span data-lang="it" class="lang-active">Calibrazione</span><span data-lang="en">Calibration</span><span data-lang="ru">Калибровка</span><span data-lang="zh">校准</span></li>
-        </ul>
-        <div class="app-links">
-          <a href="./frantilt/support.html" class="app-link-primary" target="_blank" rel="noopener noreferrer">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span data-lang-inline><span data-lang="it" class="lang-active">Supporto</span><span data-lang="en">Support</span><span data-lang="ru">Поддержка</span><span data-lang="zh">支持</span></span>
-          </a>
-          <a href="./frantilt/privacy.html" class="app-link-secondary" target="_blank" rel="noopener noreferrer" data-lang-inline>
-            <span data-lang="it" class="lang-active">Privacy</span><span data-lang="en">Privacy</span><span data-lang="ru">Политика</span><span data-lang="zh">隐私</span>
-          </a>
-        </div>
-      </article>
-
-    </div><!-- /apps-grid -->
-  </div>
-</section>
-
-<!-- ========= CONTACT BANNER ========= -->
-<section class="container--narrow">
-  <div class="contact-banner">
-    <div class="contact-text">
-      <h2 data-lang-inline>
-        <span data-lang="it" class="lang-active">Hai bisogno di aiuto?</span>
-        <span data-lang="en">Need help?</span>
-        <span data-lang="ru">Нужна помощь?</span>
-        <span data-lang="zh">需要帮助？</span>
-      </h2>
-      <p data-lang-inline>
-        <span data-lang="it" class="lang-active">Per supporto tecnico su qualsiasi app, scrivi direttamente.</span>
-        <span data-lang="en">For technical support on any app, write directly.</span>
-        <span data-lang="ru">Для технической поддержки по любому приложению пишите напрямую.</span>
-        <span data-lang="zh">如需任何应用的技术支持，请直接联系。</span>
-      </p>
+  <!-- ══════════ APP GRID ══════════ -->
+  <section class="section" aria-labelledby="apps-title">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2 class="section-title" id="apps-title" data-i18n="section_apps">Le mie app</h2>
+        <span class="section-count" data-i18n="section_count">9 app disponibili</span>
+      </div>
+      <div class="apps-grid" id="apps-grid"></div>
     </div>
-    <a href="mailto:chimien@libero.it" class="contact-btn" data-lang-inline>
-      <span data-lang="it" class="lang-active">Invia un'email →</span>
-      <span data-lang="en">Send an email →</span>
-      <span data-lang="ru">Написать →</span>
-      <span data-lang="zh">发送邮件 →</span>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <div class="contact-banner" role="complementary" aria-label="Contatti">
+    <h2 data-i18n="contact_title">Hai bisogno di supporto?</h2>
+    <p data-i18n="contact_desc">Per domande, segnalazioni o feedback su qualsiasi app, scrivi direttamente.</p>
+    <a href="mailto:chimien@libero.it" class="btn-contact" target="_blank" rel="noopener noreferrer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      <span data-i18n="contact_btn">chimien@libero.it</span>
     </a>
   </div>
-</section>
 </main>
 
-<!-- ========= FOOTER ========= -->
-<footer>
-  <div class="container footer-inner">
-    <span>© 2026 Fabrizio Chimienti. <span data-lang-inline>
-      <span data-lang="it" class="lang-active">Tutti i diritti riservati.</span>
-      <span data-lang="en">All rights reserved.</span>
-      <span data-lang="ru">Все права защищены.</span>
-      <span data-lang="zh">版权所有。</span>
-    </span></span>
-    <span style="color:var(--color-text-faint);" data-lang-inline>
-      <span data-lang="it" class="lang-active">Sviluppatore indipendente — Bologna, Italia</span>
-      <span data-lang="en">Independent developer — Bologna, Italy</span>
-      <span data-lang="ru">Независимый разработчик — Болонья, Италия</span>
-      <span data-lang="zh">独立开发者 — 意大利博洛尼亚</span>
-    </span>
-  </div>
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer" role="contentinfo">
+  <p>© <span id="year"></span> Fabrizio Zagaglia · Kimiko Apps ·
+    <a href="mailto:chimien@libero.it">chimien@libero.it</a>
+  </p>
 </footer>
 
 <script>
-// ===== LANGUAGE SYSTEM =====
-function setLang(lang) {
-  // update pills
-  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.langBtn === lang);
-  });
-  // update all [data-lang-inline] spans
-  document.querySelectorAll('[data-lang-inline] span[data-lang]').forEach(span => {
-    span.classList.toggle('lang-active', span.dataset.lang === lang);
-    span.style.display = span.dataset.lang === lang ? '' : 'none';
-  });
-  // update hero spans (h1 inside hero uses different structure)
-  document.querySelectorAll('.hero h1 span').forEach(span => {
-    span.style.display = span.dataset.lang === lang ? 'block' : 'none';
-  });
-  // update hero subtitles
-  document.querySelectorAll('.hero-sub[data-lang]').forEach(p => {
-    p.style.display = p.dataset.lang === lang ? '' : 'none';
-  });
-  // update app descriptions
-  document.querySelectorAll('.app-description[data-lang]').forEach(p => {
-    p.style.display = p.dataset.lang === lang ? '' : 'none';
-  });
-  // store lang
-  document.documentElement.lang = lang;
+// ─── TRANSLATIONS ───────────────────────────────────────────────────────────
+const T = {
+  it: {
+    skip: "Vai al contenuto",
+    hero_eyebrow: "Sviluppatore indipendente",
+    hero_title_1: "App pensate",
+    hero_title_2: "con cura.",
+    hero_desc: "Produttività, giochi, strumenti e utilità per iOS e Android. Progettate con attenzione per essere semplici, potenti e rispettose della tua privacy.",
+    stat_apps: "App pubblicate", stat_platforms: "Piattaforme", stat_langs: "Lingue",
+    section_apps: "Le mie app", section_count: "9 app disponibili",
+    contact_title: "Hai bisogno di supporto?",
+    contact_desc: "Per domande, segnalazioni o feedback su qualsiasi app, scrivi direttamente.",
+    contact_btn: "chimien@libero.it",
+    lbl_support: "Supporto", lbl_privacy: "Privacy", lbl_store: "App Store", lbl_play: "Google Play",
+  },
+  en: {
+    skip: "Skip to content",
+    hero_eyebrow: "Independent developer",
+    hero_title_1: "Apps built",
+    hero_title_2: "with care.",
+    hero_desc: "Productivity, games, tools and utilities for iOS and Android. Crafted to be simple, powerful, and privacy-respecting.",
+    stat_apps: "Published apps", stat_platforms: "Platforms", stat_langs: "Languages",
+    section_apps: "My apps", section_count: "9 apps available",
+    contact_title: "Need support?",
+    contact_desc: "For questions, bug reports or feedback about any app, write directly.",
+    contact_btn: "chimien@libero.it",
+    lbl_support: "Support", lbl_privacy: "Privacy", lbl_store: "App Store", lbl_play: "Google Play",
+  },
+  ru: {
+    skip: "Перейти к содержимому",
+    hero_eyebrow: "Независимый разработчик",
+    hero_title_1: "Приложения, созданные",
+    hero_title_2: "с заботой.",
+    hero_desc: "Продуктивность, игры, инструменты и утилиты для iOS и Android. Простые, мощные и уважающие вашу конфиденциальность.",
+    stat_apps: "Опубликованных приложений", stat_platforms: "Платформы", stat_langs: "Языки",
+    section_apps: "Мои приложения", section_count: "9 доступных приложений",
+    contact_title: "Нужна поддержка?",
+    contact_desc: "По вопросам, отчётам об ошибках или отзывам о любом приложении — пишите напрямую.",
+    contact_btn: "chimien@libero.it",
+    lbl_support: "Поддержка", lbl_privacy: "Конфиденц.", lbl_store: "App Store", lbl_play: "Google Play",
+  },
+  zh: {
+    skip: "跳到内容",
+    hero_eyebrow: "独立开发者",
+    hero_title_1: "精心打造的",
+    hero_title_2: "应用程序。",
+    hero_desc: "面向 iOS 和 Android 的效率工具、游戏和实用程序。设计简洁、功能强大，并尊重您的隐私。",
+    stat_apps: "已发布应用", stat_platforms: "平台", stat_langs: "语言",
+    section_apps: "我的应用", section_count: "9 款应用",
+    contact_title: "需要支持吗？",
+    contact_desc: "如有任何应用的问题、错误报告或反馈，请直接写信。",
+    contact_btn: "chimien@libero.it",
+    lbl_support: "支持", lbl_privacy: "隐私", lbl_store: "App Store", lbl_play: "Google Play",
+  }
+};
+
+// ─── APP DATA ────────────────────────────────────────────────────────────────
+const APPS = [
+  {
+    id: "cardora",
+    icon: "💳",
+    accent: "#01696f",
+    iconBg: "#e0f2f1",
+    platforms: ["iOS"],
+    cat: { it:"Produttività", en:"Productivity", ru:"Продуктивность", zh:"效率" },
+    catColor: "#01696f",
+    name: "Cardora",
+    desc: {
+      it: "Portafoglio digitale per tessere fedeltà, completamente offline. Geofencing GPS per ricevere notifiche quando sei vicino al negozio.",
+      en: "Offline digital loyalty card wallet. GPS geofencing to get notified when you're near a store.",
+      ru: "Офлайн-кошелёк для карт лояльности. GPS-геофенсинг для уведомлений вблизи магазина.",
+      zh: "离线数字会员卡钱包。GPS地理围栏，在商店附近时收到通知。"
+    },
+    tags: ["iCloud", "GPS Geofencing", "Offline", "Notifiche"],
+    links: [
+      { labelKey:"lbl_support", href:"./Cardora/support.html" },
+      { labelKey:"lbl_privacy", href:"./Cardora/privacy.html" }
+    ]
+  },
+  {
+    id: "intap",
+    icon: "🎵",
+    accent: "#d46b00",
+    iconBg: "#fff3e0",
+    platforms: ["Android"],
+    cat: { it:"Giochi", en:"Games", ru:"Игры", zh:"游戏" },
+    catColor: "#d46b00",
+    name: "InTap / MusicGames",
+    desc: {
+      it: "Gioco musicale ritmico per Android. Tappa a ritmo di musica, scala le classifiche e sfida i tuoi amici.",
+      en: "Rhythm music game for Android. Tap to the beat, climb the leaderboards and challenge friends.",
+      ru: "Ритм-игра для Android. Тапайте в такт музыке и соревнуйтесь с друзьями.",
+      zh: "Android 节奏音乐游戏。跟随节拍点击，挑战排行榜。"
+    },
+    tags: ["AdMob", "OneSignal", "Leaderboard"],
+    links: [
+      { labelKey:"lbl_support", href:"./InTap/support.html" },
+      { labelKey:"lbl_privacy", href:"./InTap/privacy.html" }
+    ]
+  },
+  {
+    id: "mindspark",
+    icon: "🧠",
+    accent: "#7a39bb",
+    iconBg: "#f3e8ff",
+    platforms: ["iOS"],
+    cat: { it:"Benessere", en:"Wellness", ru:"Здоровье", zh:"健康" },
+    catColor: "#7a39bb",
+    name: "MindSpark",
+    desc: {
+      it: "Allenamento cognitivo con programma da 30 giorni. Esercizi per memoria, concentrazione e agilità mentale.",
+      en: "Cognitive training with a 30-day program. Exercises for memory, focus and mental agility.",
+      ru: "Когнитивный тренинг с 30-дневной программой. Упражнения для памяти и концентрации.",
+      zh: "30天认知训练计划。记忆力、专注力和思维敏捷性练习。"
+    },
+    tags: ["CloudKit", "Premium", "30 giorni", "Brain Training"],
+    links: [
+      { labelKey:"lbl_support", href:"./mindspark/support.html" },
+      { labelKey:"lbl_privacy", href:"./mindspark/privacy.html" }
+    ]
+  },
+  {
+    id: "retimer",
+    icon: "⏱️",
+    accent: "#a12c7b",
+    iconBg: "#fce4f3",
+    platforms: ["iOS"],
+    cat: { it:"Produttività", en:"Productivity", ru:"Продуктивность", zh:"效率" },
+    catColor: "#a12c7b",
+    name: "Retimer",
+    desc: {
+      it: "Focus e produttività con blocco app tramite Screen Time API. Sistema di XP per premiarti quando mantieni la concentrazione.",
+      en: "Focus and productivity with app blocking via Screen Time API. XP reward system when you stay focused.",
+      ru: "Фокус и продуктивность с блокировкой приложений через Screen Time API. Система XP-наград.",
+      zh: "专注与效率应用，通过Screen Time API阻止应用。专注时获得XP奖励。"
+    },
+    tags: ["Screen Time API", "XP System", "Focus Blocks"],
+    links: [
+      { labelKey:"lbl_support", href:"./retimer/support.html" },
+      { labelKey:"lbl_privacy", href:"./retimer/privacy.html" }
+    ]
+  },
+  {
+    id: "frantilt",
+    icon: "🚀",
+    accent: "#006494",
+    iconBg: "#e3f2fd",
+    platforms: ["iOS"],
+    cat: { it:"Giochi", en:"Games", ru:"Игры", zh:"游戏" },
+    catColor: "#006494",
+    name: "FranTilt",
+    desc: {
+      it: "Gioco spaziale arcade controllato inclinando il dispositivo. Accelerometro e Game Center per sfidare i migliori punteggi.",
+      en: "Space arcade game controlled by tilting the device. Accelerometer and Game Center for high scores.",
+      ru: "Космический аркадный шутер, управляемый наклоном устройства. Акселерометр и Game Center.",
+      zh: "通过倾斜设备控制的太空街机游戏。加速计与Game Center排行榜。"
+    },
+    tags: ["Game Center", "Accelerometro", "Arcade"],
+    links: [
+      { labelKey:"lbl_support", href:"./frantilt/support.html" },
+      { labelKey:"lbl_privacy", href:"./frantilt/privacy.html" }
+    ]
+  },
+  {
+    id: "definitiveqr",
+    icon: "📷",
+    accent: "#437a22",
+    iconBg: "#e8f5e9",
+    platforms: ["iOS"],
+    cat: { it:"Strumenti", en:"Tools", ru:"Инструменты", zh:"工具" },
+    catColor: "#437a22",
+    name: "Definitive QR Code",
+    desc: {
+      it: "Scansione e generazione di QR code e codici a barre. Interfaccia pulita, funziona offline senza raccogliere dati.",
+      en: "QR code and barcode scanner and generator. Clean interface, works offline with no data collection.",
+      ru: "Сканер и генератор QR-кодов и штрихкодов. Без сбора данных, работает офлайн.",
+      zh: "QR码和条形码扫描器与生成器。离线使用，不收集任何数据。"
+    },
+    tags: ["Offline", "Scanner", "Generator", "Privacy"],
+    links: [
+      { labelKey:"lbl_support", href:"./definitiveQRCode-support-it.html" },
+      { labelKey:"lbl_privacy", href:"./definitiveQRCode-privacy-it.html" }
+    ]
+  },
+  {
+    id: "oreLavorate",
+    icon: "⏰",
+    accent: "#007AFF",
+    iconBg: "#e3f0ff",
+    platforms: ["iOS", "Android"],
+    cat: { it:"Produttività", en:"Productivity", ru:"Продуктивность", zh:"效率" },
+    catColor: "#007AFF",
+    name: "Controlla Ore Lavorate",
+    desc: {
+      it: "Traccia le ore di lavoro con report PDF, widget iOS e import/export CSV. Ideale per liberi professionisti. Completamente offline e gratuito.",
+      en: "Track work hours with PDF reports, iOS widgets and CSV import/export. Ideal for freelancers. Fully offline and free.",
+      ru: "Учёт рабочих часов с PDF-отчётами, виджетами iOS и экспортом CSV. Для фрилансеров. Бесплатно и офлайн.",
+      zh: "工时追踪：PDF报告、iOS小组件、CSV导入导出。适合自由职业者。完全离线免费使用。"
+    },
+    tags: ["Offline", "Gratuito", "PDF", "Widget iOS", "CSV"],
+    links: [
+      { labelKey:"lbl_support", href:"./support_controlla_ore_lavorate.html" },
+      { labelKey:"lbl_privacy", href:"./controlla_ore_lavorate_privacy.html" }
+    ]
+  },
+  {
+    id: "calculator",
+    icon: "🧮",
+    accent: "#964219",
+    iconBg: "#fbe9e7",
+    platforms: ["iOS"],
+    cat: { it:"Strumenti", en:"Tools", ru:"Инструменты", zh:"工具" },
+    catColor: "#964219",
+    name: "Unlimited Calculator Pro",
+    desc: {
+      it: "Calcolatrice avanzata senza limiti di cifre. Operazioni scientifiche, cronologia e interfaccia pulita.",
+      en: "Advanced calculator with unlimited digits. Scientific operations, history and a clean interface.",
+      ru: "Продвинутый калькулятор без ограничений на количество цифр. Научные операции и история вычислений.",
+      zh: "无位数限制的高级计算器。科学运算、计算历史和简洁界面。"
+    },
+    tags: ["Calcolo scientifico", "Cronologia", "No limiti"],
+    links: [
+      { labelKey:"lbl_support", href:"./unlimited-calculator-pro-assistance.html" },
+      { labelKey:"lbl_privacy", href:"./unlimited-calculator-pro-privacy.html" }
+    ]
+  },
+  {
+    id: "costituzione",
+    icon: "🏛️",
+    accent: "#8a5b00",
+    iconBg: "#fff8e1",
+    platforms: ["iOS"],
+    cat: { it:"Educazione", en:"Education", ru:"Образование", zh:"教育" },
+    catColor: "#8a5b00",
+    name: "Costituzione Italiana",
+    desc: {
+      it: "La Costituzione della Repubblica Italiana sempre a portata di mano. Lettura offline, ricerca per articolo e disponibile anche su Apple TV.",
+      en: "The Italian Constitution always at hand. Offline reading, article search, and available on Apple TV too.",
+      ru: "Конституция Итальянской Республики всегда под рукой. Офлайн-чтение и поиск по статьям.",
+      zh: "意大利共和国宪法随时可查。离线阅读、按条文搜索，也支持Apple TV。"
+    },
+    tags: ["Offline", "Apple TV", "tvOS", "Educazione"],
+    links: [
+      { labelKey:"lbl_privacy", href:"./costituzione_privacy.html" }
+    ]
+  }
+];
+
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+let currentLang = 'it';
+
+function renderApps(lang) {
+  const grid = document.getElementById('apps-grid');
+  grid.innerHTML = APPS.map(app => {
+    const platformBadges = app.platforms.map(p =>
+      `<span class="badge badge-platform">${p}</span>`
+    ).join('');
+    const catBadge = `<span class="badge badge-cat" style="background:${app.catColor}">${app.cat[lang]}</span>`;
+    const tags = app.tags.map(t => `<span class="feat-tag">${t}</span>`).join('');
+    const links = app.links.map(l => `
+      <a href="${l.href}" class="card-link" target="_blank" rel="noopener noreferrer">${T[lang][l.labelKey]}</a>
+    `).join('');
+
+    return `
+    <article class="app-card" style="--card-accent:${app.accent}" aria-label="${app.name}">
+      <div class="card-top">
+        <div class="app-icon-wrap" style="background:${app.iconBg}" aria-hidden="true">${app.icon}</div>
+        <div class="card-meta">
+          <div class="app-name">${app.name}</div>
+          <div class="badges">${platformBadges}${catBadge}</div>
+        </div>
+      </div>
+      <p class="app-desc">${app.desc[lang]}</p>
+      <div class="feature-tags">${tags}</div>
+      <div class="card-links">${links}</div>
+    </article>`;
+  }).join('');
 }
 
-// Auto-detect language on load
+function applyTranslations(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (T[lang][key]) el.textContent = T[lang][key];
+  });
+  document.documentElement.lang = { it:'it', en:'en', ru:'ru', zh:'zh-Hans' }[lang];
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  applyTranslations(lang);
+  renderApps(lang);
+}
+
+// ─── THEME TOGGLE ────────────────────────────────────────────────────────────
 (function(){
-  const nav = navigator.language || 'it';
-  const supported = ['it', 'en', 'ru', 'zh'];
-  const code = nav.substring(0, 2);
-  const lang = supported.includes(code) ? code : 'en';
-  // Initialize inline spans visibility first
-  document.querySelectorAll('[data-lang-inline] span[data-lang]').forEach(span => {
-    span.style.display = span.dataset.lang === 'it' ? '' : 'none';
-  });
-  document.querySelectorAll('.hero h1 span').forEach(span => {
-    span.style.display = span.dataset.lang === 'it' ? 'block' : 'none';
-  });
-  document.querySelectorAll('.hero-sub[data-lang]').forEach(p => {
-    p.style.display = p.dataset.lang === 'it' ? '' : 'none';
-  });
-  document.querySelectorAll('.app-description[data-lang]').forEach(p => {
-    p.style.display = p.dataset.lang === 'it' ? '' : 'none';
-  });
-  if (lang !== 'it') setLang(lang);
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if (btn) {
+    const moonIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    const sunIcon  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    btn.innerHTML = dark ? moonIcon : sunIcon;
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      btn.innerHTML = dark ? moonIcon : sunIcon;
+      btn.setAttribute('aria-label', dark ? 'Passa al tema chiaro' : 'Passa al tema scuro');
+    });
+  }
 })();
 
-// ===== THEME TOGGLE =====
-(function(){
-  const toggle = document.querySelector('[data-theme-toggle]');
-  const html = document.documentElement;
-  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  html.setAttribute('data-theme', theme);
-  function updateIcon() {
-    toggle.innerHTML = theme === 'dark'
-      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Passa a dark mode');
-  }
-  updateIcon();
-  toggle.addEventListener('click', () => {
-    theme = theme === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', theme);
-    updateIcon();
-  });
-})();
+// ─── INIT ────────────────────────────────────────────────────────────────────
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const browserLang = (navigator.language || 'it').substring(0,2);
+const initLang = ['it','en','ru','zh'].includes(browserLang) ? browserLang : 'it';
+setLang(initLang);
 </script>
 </body>
 </html>
